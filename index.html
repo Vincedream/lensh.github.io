@@ -164,20 +164,94 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-网页版手机QQ" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react-server-render" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/20/网页版手机QQ/">网页版手机QQ</a>
+      <a class="article-title" href="/2017/07/22/react-server-render/">React服务端渲染</a>
     </h1>
   
 
         
-        <a href="/2017/07/20/网页版手机QQ/" class="archive-article-date">
-  	<time datetime="2017-07-20T13:54:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
+        <a href="/2017/07/22/react-server-render/" class="archive-article-date">
+  	<time datetime="2017-07-22T12:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？</p>
+<h2 id="原因与思路"><a href="#原因与思路" class="headerlink" title="原因与思路"></a>原因与思路</h2><p>客户端渲染路线：1. 请求一个html -&gt; 2. 服务端返回一个html -&gt; 3. 浏览器下载html里面的js/css文件 -&gt; 4. 等待js文件下载完成 -&gt; 5. 等待js加载并初始化完成 -&gt; 6. js代码终于可以运行，由js代码向后端请求数据( ajax/fetch ) -&gt; 7. 等待后端数据返回 -&gt; 8. react-dom( 客户端 )从无到完整地，把数据渲染为响应页面.<br>
+        
+          <a class="article-more-a" href="/2017/07/22/react-server-render/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">React-dom</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">服务端渲染</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/22/react-server-render/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-qq" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/15/qq/">网页版手机QQ</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/15/qq/" class="archive-article-date">
+  	<time datetime="2017-07-15T13:54:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
 </a>
         
       </header>
@@ -195,7 +269,7 @@
 <li><strong>axios</strong>：一个基于 <code>Promise</code> 的 HTTP 库，向后端发起请求</li>
 </ul>
         
-          <a class="article-more-a" href="/2017/07/20/网页版手机QQ/#more">more >></a>
+          <a class="article-more-a" href="/2017/07/15/qq/#more">more >></a>
         
       
 
@@ -208,10 +282,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">socket.io</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
@@ -226,6 +296,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Vue2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">socket.io</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -251,7 +325,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/20/网页版手机QQ/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/15/qq/">展开全文 >></a>
         </p>
       
 
@@ -266,20 +340,81 @@
 
 
   
-    <article id="post-四六级成绩查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-es8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/四六级成绩查询/">英语四六级成绩查询系统</a>
+      <a class="article-title" href="/2017/07/05/es8/">ES8 新特性</a>
     </h1>
   
 
         
-        <a href="/2017/07/15/四六级成绩查询/" class="archive-article-date">
-  	<time datetime="2017-07-15T01:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+        <a href="/2017/07/05/es8/" class="archive-article-date">
+  	<time datetime="2017-07-05T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。<br>JavaScript，作为一门处于高速发展期的开发语言，正在变的越来越完善、稳定。我们必须拥抱这些变化，并且我们需要把ES8加入到我们的技术栈中。<br>如果您想对 ES8 做一个深入、彻底的了解，您可以查阅Web 资源或者PDF 资源。其他的读者，您可以直接查阅本文，因为本文将涵盖 ES8 主要的新特性，并且会附上代码示例。<br>
+        
+          <a class="article-more-a" href="/2017/07/05/es8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES8</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/es8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-cet-search" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/cet-search/">英语四六级成绩查询系统</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/cet-search/" class="archive-article-date">
+  	<time datetime="2017-06-12T01:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
 </a>
         
       </header>
@@ -295,7 +430,7 @@
 <li><strong>superagent</strong>：爬虫的核心，进行模拟请求</li>
 </ul>
         
-          <a class="article-more-a" href="/2017/07/15/四六级成绩查询/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/12/cet-search/#more">more >></a>
         
       
 
@@ -309,11 +444,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -347,7 +482,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/15/四六级成绩查询/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/12/cet-search/">展开全文 >></a>
         </p>
       
 
@@ -362,35 +497,30 @@
 
 
   
-    <article id="post-ES8-async" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-socket.io" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/ES8-async/">ES8 async/await</a>
+      <a class="article-title" href="/2017/05/10/socket.io/">socket.io原理和使用</a>
     </h1>
   
 
         
-        <a href="/2017/07/10/ES8-async/" class="archive-article-date">
-  	<time datetime="2017-07-10T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+        <a href="/2017/05/10/socket.io/" class="archive-article-date">
+  	<time datetime="2017-05-10T11:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ES8 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：</p>
-<ul>
-<li><strong>内置执行器</strong>。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样。</li>
-<li><strong>更好的语义</strong>。async 和 await 相较于 * 和 yield 更加语义化。</li>
-<li><strong>更广的适用性</strong>。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise对象。而 async 函数的 await 命令后面则可以是 Promise 或者 原始类型的值（Number，string，boolean，但这时等同于同步操作）</li>
-<li><strong>返回值是 Promise</strong>。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用</li>
-</ul>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>一个完整的 EIO Socket 包括多个 XHR 和 WebSocket 连接。前端：EIO Socket 通过一个 XHR (XMLHttprequest) 握手。前端发送一个 XHR，告诉服务端我要开始 XHR 长轮询了。<br>后端返回的数据里面包括一个 open 标志(数字 0 表示), 以及一个 sid 和 upgrades 字段。sid 是本次 EIO Socket 的会话 ID，因为一次 EIO Socket 包含了多个请求，而后端又会同时连接多个 EIO Socket，sid 的作用就相当于 SESSION ID。另一个字段 upgrades，正常情况下是 [‘websocket’]，表示可以把连接方式从长轮询升级到 WebSocket.前端在发送第一个 XHR 的时候就开始了 XHR 长轮询，这个时候如果有收发数据的需求，是通过长轮询实现的。<br>
         
-          <a class="article-more-a" href="/2017/07/10/ES8-async/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/10/socket.io/#more">more >></a>
         
       
 
@@ -404,138 +534,89 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES8</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">async/await</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">socket.io</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/10/socket.io/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-connect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/06/connect/">Connect中间件</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/06/connect/" class="archive-article-date">
+  	<time datetime="2017-04-06T09:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>先看Nodejs 的经典 httpServer 代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(requestHandler);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestHandler</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello visitor!'</span>);</div><div class="line">&#125;</div><div class="line">server.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
+<p>里面的函数 requestHandler 就是所有http请求的响应函数，即所有的请求都经过这个函数的处理，是所有请求的入口函数。通过 requestHandler 函数我们能写一些简单的 http 逻辑，比如上面的例子，所有请求都返回 hello visitor!。然而，我们的业务逻辑不可能这么简单。例如：需要实现一个接口，要做的是当请求过来时，先判断来源的请求是否包含请求体，然后判断请求体中的id是不是在数据库中存在，最后若存在则返回true，不存在则返回false。<br>
+        
+          <a class="article-more-a" href="/2017/04/06/connect/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Express</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/ES8-async/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-ES8新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/ES8新特性/">ES8 新特性</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/30/ES8新特性/" class="archive-article-date">
-  	<time datetime="2017-06-30T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。<br>JavaScript，作为一门处于高速发展期的开发语言，正在变的越来越完善、稳定。我们必须拥抱这些变化，并且我们需要把ES8加入到我们的技术栈中。<br>如果您想对 ES8 做一个深入、彻底的了解，您可以查阅Web 资源或者PDF 资源。其他的读者，您可以直接查阅本文，因为本文将涵盖 ES8 主要的新特性，并且会附上代码示例。<br>
-        
-          <a class="article-more-a" href="/2017/06/30/ES8新特性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES8</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Connect</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/30/ES8新特性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-ES7新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/ES7新特性/">ES7 新特性</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/10/ES7新特性/" class="archive-article-date">
-  	<time datetime="2017-06-10T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES7主要是增加了Array.prototype.includes()和求冥运算两个特性。</p>
-<h2 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes"></a>Array.prototype.includes</h2><p>Array.prototype.includes用法都容易和简单。它是一个替代indexOf，开发人员用来检查数组中是否存在值，indexOf是一种尴尬的使用，因为它返回一个元素在数组中的位置或者-1当这样的元素不能被找到的情况下。所以它返回一个数字，而不是一个布尔值。开发人员需要实施额外的检查。在ES6，要检查是否存在值你需要做一些如下图所示小技巧，因为他们没有匹配到值，Array.prototype.indexOf返回-1变成了true（转换成true），但是当匹配的元素为0位置时候，该数组包含元素，却变成了false<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'react'</span>, <span class="string">'angular'</span>, <span class="string">'vue'</span>]</div><div class="line"></div><div class="line"><span class="comment">// WRONG</span></div><div class="line"><span class="keyword">if</span> (arr.indexOf(<span class="string">'react'</span>)) &#123; <span class="comment">// 0 -&gt; evaluates to false, definitely as we expected</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Can use React'</span>) <span class="comment">// this line would never be executed</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Correct</span></div><div class="line"><span class="keyword">if</span> (arr.indexOf(<span class="string">'react'</span>) !== <span class="number">-1</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Can use React'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/06/10/ES7新特性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES7</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">中间件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">异步流程控制</a>
         		</li>
       		
 		</ul>
@@ -545,7 +626,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/ES7新特性/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/04/06/connect/">展开全文 >></a>
         </p>
       
 
@@ -560,30 +641,30 @@
 
 
   
-    <article id="post-求数组的最大值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-koa2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/23/求数组的最大值/">求数组的最大值</a>
+      <a class="article-title" href="/2017/03/27/koa2/">Koa2入门及原理解析</a>
     </h1>
   
 
         
-        <a href="/2017/05/23/求数组的最大值/" class="archive-article-date">
-  	<time datetime="2017-05-23T06:50:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
+        <a href="/2017/03/27/koa2/" class="archive-article-date">
+  	<time datetime="2017-03-27T09:00:20.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？</p>
-<h2 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max"></a>Math.max</h2><p>JavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：<br>Math.max([value1[,value2, …]])<br>值得注意的是：<br>如果有任一参数不能被转换为数值，则结果为 NaN。<br>max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为 Math 实例的方法 (简单的来说，就是不使用 new )<br>如果没有参数，则结果为 -Infinity (注意是负无穷大)<br>而我们需要分析的是：</p>
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。<br>直接安装node.js 7.6：node.js官网地址<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nvm管理多版本node.js：可以用nvm 进行node版本进行管理<br>Mac系统安装nvm <a href="https://github.com/creationix/nvm#manual-install" target="_blank" rel="external">https://github.com/creationix/nvm#manual-install</a><br>windows系统安装nvm <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a><br>Ubuntu系统安装nvm <a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a><br>npm 版本3.x以上</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="安装koa2"><a href="#安装koa2" class="headerlink" title="安装koa2"></a>安装koa2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//初始化package.json</div><div class="line">$ npm init</div><div class="line"></div><div class="line">//安装koa2 </div><div class="line">$ npm install koa</div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/05/23/求数组的最大值/#more">more >></a>
+          <a class="article-more-a" href="/2017/03/27/koa2/#more">more >></a>
         
       
 
@@ -601,7 +682,23 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES7</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">async/await</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">generator</a>
         		</li>
       		
 		</ul>
@@ -611,7 +708,73 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/23/求数组的最大值/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/27/koa2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-nodejs-timer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/19/nodejs-timer/">nodejs定时器</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/19/nodejs-timer/" class="archive-article-date">
+  	<time datetime="2017-02-19T10:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。<br>示例1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟"</span>);</div><div class="line">&#125;);</div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟"</span>);</div><div class="line"> &#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</div></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//正常执行</div><div class="line">//nextTick延迟</div><div class="line">//setImmediate延迟</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/02/19/nodejs-timer/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">定时器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/19/nodejs-timer/">展开全文 >></a>
         </p>
       
 
@@ -628,7 +791,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -722,51 +885,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES7</a>
+                <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">async/await</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">socket.io</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Connect</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">异步流程控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -794,11 +925,103 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">异步流程控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES7</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">async/await</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gzip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">拖放事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">WebWorker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">koa2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Vue2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">socket.io</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,6 +1038,62 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">IScroll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">React-dom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">服务端渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">webSocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">comet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">xmlSocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>
