@@ -164,6 +164,314 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/sort/">常用排序算法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/01/sort/" class="archive-article-date">
+  	<time datetime="2017-09-01T13:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、冒泡排序</strong><br>冒泡排序是最简单的排序算法。假设数组一共有n个元素，元素最大下标为n-1，冒泡排序的具体做法是：第一趟在序列(A[0]~A[n-1])中从前往后进行两个相邻元素的比较，若前者大，则交换，比较 n-1 次；第一趟排序结束，最大元素被交换到A[n-1]中，下一趟排序只需要在子序列(A[0]~A[n-2])中进行；依次类推，冒泡排序最多进行 n-1 趟。基本的冒泡排序可以利用旗标的方式稍微减少一些比较的时间，当寻访完序列后都沒有发生任何的交换动作，表示排序已经完成，而无需再进行之后的比较与交换动作。<br>
+        
+          <a class="article-more-a" href="/2017/09/01/sort/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/01/sort/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-coding1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/29/coding1/">校招编程题常见题型汇总2</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/29/coding1/" class="archive-article-date">
+  	<time datetime="2017-08-29T14:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要涉及大数各位循环求和、快速幂求模、N的阶乘(大数)、阶乘的位数、n个数的最小公倍数、费波尼茨找规律。<br><strong>1.大数各位循环求和</strong><br>给定一个大数(可能有一千位)，然后各位相加求和，会得到一个数，如果这个数还不是个位数，则继续各位相加求和，直至其和是个位数。例如39，求和(3+9)会得到12，但12还不是个位数，所以继续求和(1+2)，得到3，3是个位数，所以结果是3。<br><strong>Input</strong><br>The input file will contain a list of positive integers, one per line. The end of the input will be indicated by an integer value of zero.<br><strong>Output</strong><br>For each integer in the input, output its digital root on a separate line of the output.<br>
+        
+          <a class="article-more-a" href="/2017/08/29/coding1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/29/coding1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-coding" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/coding/">校招编程题常见题型汇总1</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/28/coding/" class="archive-article-date">
+  	<time datetime="2017-08-28T01:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要涉及最大连续子序列和、最长公共连续子串、第K大数、0~9每个数字出现了多少次、找整除、最小的矩形、平衡数、背包问题、大数求和。<br><strong>1.最大连续子序列和</strong><br>求取数组中最大连续子序列和,例如给定数组为A={1,3,-2,4,-5},则最大连续子序列和为6,即1+3+(-2)+ 4=6。<br><strong>解题思路</strong>:因为最大连续子序列和只可能是以位置0～n-1中某个位置结尾。当遍历到第i个元素时，判断在它前面的连续子序列和是否大于0，如果大于0，则以位置i结尾的最大连续子序列和为元素i和前门的连续子序列和相加；否则，则以位置i结尾的最大连续子序列和为元素i。时间复杂度为o(n)。<br>
+        
+          <a class="article-more-a" href="/2017/08/28/coding/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/28/coding/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-alibaba-interview" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/27/alibaba-interview/">阿里校招前端面经</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/27/alibaba-interview/" class="archive-article-date">
+  	<time datetime="2017-08-27T03:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。</p>
+<hr>
+<p><strong>1.</strong> 说说你做的那个网页版手机QQ项目的难点。<br>我首先想到了<strong>滚动条位置无法还原</strong>的问题，也就是点击列表项跳到详情页后再返回时，滚动条位置无法还原的bug。我的解决办法是通过vuex来保存每个组件里的滚动条的位置，然后返回时再滚动到这个位置即可，不过得设置滚动时间为0，不然会有明显的滚动过程，用户体验会很差。<br>然后又想到了做IP定位时遇到的<strong>后台express服务端无法获取用户真实ip地址</strong>的问题。其实express是可以获取用户真实ip地址的，只是我的nginx没有写好配置，导致express获取到的始终是127.0.0.1本地ip地址。无论怎么获取，都是这个地址。<br>解决办法是修改nginx的配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">location / &#123;</div><div class="line">   proxy_pass http://localhost:8080;   # 项目真实地址</div><div class="line">　 proxy_set_header Host $host;</div><div class="line">   proxy_set_header X-Real-IP $remote_addr;</div><div class="line">   proxy_set_header REMOTE-HOST $remote_addr;</div><div class="line">   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/08/27/alibaba-interview/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面经</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/27/alibaba-interview/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-alibaba" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/25/alibaba/">阿里校招前端笔试题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/25/alibaba/" class="archive-article-date">
+  	<time datetime="2017-08-25T12:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阿里前端笔试题，题目不多，难度也不大，我只记录了两道稍微有点难度的编程题。题目如下：<br>1.JSON.stringify 的功能是，将一个 JavaScript 字面量对象转化为一个 JSON 格式的字符串。例如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;</div><div class="line"><span class="built_in">JSON</span>.stringify(obj) <span class="comment">// =&gt; '&#123;"a":1,"b":2&#125;'</span></div></pre></td></tr></table></figure></p>
+<p>当要转化的对象有“环”存在时（子节点属性赋值了父节点的引用），为了避免死循环，JSON.stringify 会抛出异常，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  <span class="attr">foo</span>: &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'foo'</span>,</div><div class="line">    <span class="attr">bar</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'bar'</span>,</div><div class="line">      <span class="attr">baz</span>: &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">'baz'</span>,</div><div class="line">        <span class="attr">aChild</span>: <span class="literal">null</span> <span class="comment">// 待会将指向obj.bar</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">obj.foo.bar.baz.aChild = obj.foo <span class="comment">// foo-&gt;bar-&gt;baz-&gt;aChild-&gt;foo形成环</span></div><div class="line"><span class="built_in">JSON</span>.stringify(obj) <span class="comment">// =&gt; TypeError: Converting circular personucture to JSON</span></div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/08/25/alibaba/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔经</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/25/alibaba/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-react-server-render" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -401,397 +709,9 @@
 
 
   
-    <article id="post-cet-search" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/cet-search/">英语四六级成绩查询系统</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/12/cet-search/" class="archive-article-date">
-  	<time datetime="2017-06-12T01:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Angular+Koa2实现的英语四六级成绩查询系统，同时提供免费API接口 </p>
-<h1 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h1><p>在线预览地址: <a href="https://cet.lenshen.com" target="_blank" rel="external">https://cet.lenshen.com</a></p>
-<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><ul>
-<li><strong>Angular</strong>：实现前端页面构建</li>
-<li><strong>Koa2</strong>：实现服务端具体业务逻辑</li>
-<li><strong>ES6</strong>、<strong>ES7</strong>、<strong>ES8</strong>：服务端使用ES6语法，promise/async/await 处理异步</li>
-<li><strong>superagent</strong>：爬虫的核心，进行模拟请求</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/06/12/cet-search/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Koa2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">cheerio</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsonp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cors</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pm2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/cet-search/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-socket.io" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/10/socket.io/">socket.io原理和使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/10/socket.io/" class="archive-article-date">
-  	<time datetime="2017-05-10T11:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>一个完整的 EIO Socket 包括多个 XHR 和 WebSocket 连接。前端：EIO Socket 通过一个 XHR (XMLHttprequest) 握手。前端发送一个 XHR，告诉服务端我要开始 XHR 长轮询了。<br>后端返回的数据里面包括一个 open 标志(数字 0 表示), 以及一个 sid 和 upgrades 字段。sid 是本次 EIO Socket 的会话 ID，因为一次 EIO Socket 包含了多个请求，而后端又会同时连接多个 EIO Socket，sid 的作用就相当于 SESSION ID。另一个字段 upgrades，正常情况下是 [‘websocket’]，表示可以把连接方式从长轮询升级到 WebSocket.前端在发送第一个 XHR 的时候就开始了 XHR 长轮询，这个时候如果有收发数据的需求，是通过长轮询实现的。<br>
-        
-          <a class="article-more-a" href="/2017/05/10/socket.io/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">socket.io</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/10/socket.io/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-connect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/06/connect/">Connect中间件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/06/connect/" class="archive-article-date">
-  	<time datetime="2017-04-06T09:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>先看Nodejs 的经典 httpServer 代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(requestHandler);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestHandler</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello visitor!'</span>);</div><div class="line">&#125;</div><div class="line">server.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>里面的函数 requestHandler 就是所有http请求的响应函数，即所有的请求都经过这个函数的处理，是所有请求的入口函数。通过 requestHandler 函数我们能写一些简单的 http 逻辑，比如上面的例子，所有请求都返回 hello visitor!。然而，我们的业务逻辑不可能这么简单。例如：需要实现一个接口，要做的是当请求过来时，先判断来源的请求是否包含请求体，然后判断请求体中的id是不是在数据库中存在，最后若存在则返回true，不存在则返回false。<br>
-        
-          <a class="article-more-a" href="/2017/04/06/connect/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Express</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Connect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">中间件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">异步流程控制</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/06/connect/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-koa2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/27/koa2/">Koa2入门及原理解析</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/27/koa2/" class="archive-article-date">
-  	<time datetime="2017-03-27T09:00:20.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。<br>直接安装node.js 7.6：node.js官网地址<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nvm管理多版本node.js：可以用nvm 进行node版本进行管理<br>Mac系统安装nvm <a href="https://github.com/creationix/nvm#manual-install" target="_blank" rel="external">https://github.com/creationix/nvm#manual-install</a><br>windows系统安装nvm <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a><br>Ubuntu系统安装nvm <a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a><br>npm 版本3.x以上</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="安装koa2"><a href="#安装koa2" class="headerlink" title="安装koa2"></a>安装koa2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//初始化package.json</div><div class="line">$ npm init</div><div class="line"></div><div class="line">//安装koa2 </div><div class="line">$ npm install koa</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/03/27/koa2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES7</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">async/await</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">generator</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/27/koa2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-nodejs-timer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/19/nodejs-timer/">nodejs定时器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/19/nodejs-timer/" class="archive-article-date">
-  	<time datetime="2017-02-19T10:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。<br>示例1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟"</span>);</div><div class="line">&#125;);</div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟"</span>);</div><div class="line"> &#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</div></pre></td></tr></table></figure></p>
-<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//正常执行</div><div class="line">//nextTick延迟</div><div class="line">//setImmediate延迟</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/02/19/nodejs-timer/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">定时器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/19/nodejs-timer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -885,6 +805,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">304</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
              
@@ -893,23 +821,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Connect</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">异步流程控制</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -941,6 +857,26 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">异步流程控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES7</a>
               </li>
              
@@ -957,15 +893,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">https</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,15 +917,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">koa2</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">npm5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,15 +957,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">apache</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,7 +985,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1077,10 +1013,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
@@ -1094,6 +1026,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">xmlSocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
             
             <div class="clearfix"></div>
