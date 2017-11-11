@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？ 原因与思路客户端渲染路线：1. 请求一个html -&amp;gt;">
+  <meta name="description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？">
 <meta name="keywords" content="nodejs,React,React-dom,服务端渲染">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React服务端渲染">
 <meta property="og:url" content="https://lenshen.com/2017/07/22/react-server-render/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？ 原因与思路客户端渲染路线：1. 请求一个html -&amp;gt;">
-<meta property="og:updated_time" content="2017-08-06T07:05:07.249Z">
+<meta property="og:description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？">
+<meta property="og:updated_time" content="2017-11-11T07:55:48.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React服务端渲染">
-<meta name="twitter:description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？ 原因与思路客户端渲染路线：1. 请求一个html -&amp;gt;">
+<meta name="twitter:description" content="前言为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？</p>
-<h2 id="原因与思路"><a href="#原因与思路" class="headerlink" title="原因与思路"></a>原因与思路</h2><p>客户端渲染路线：1. 请求一个html -&gt; 2. 服务端返回一个html -&gt; 3. 浏览器下载html里面的js/css文件 -&gt; 4. 等待js文件下载完成 -&gt; 5. 等待js加载并初始化完成 -&gt; 6. js代码终于可以运行，由js代码向后端请求数据( ajax/fetch ) -&gt; 7. 等待后端数据返回 -&gt; 8. react-dom( 客户端 )从无到完整地，把数据渲染为响应页面.<br><a id="more"></a><br>服务端渲染路线：1. 请求一个html -&gt; 2. 服务端请求数据( 内网请求快 ) -&gt; 3. 服务器初始渲染<br>（服务端性能好，较快） -&gt; 4. 服务端返回已经有正确内容的页面 -&gt; 5. 客户端请求js/css文件 -&gt; 6. 等待js文件下载完成 -&gt; 7. 等待js加载并初始化完成 -&gt; 8. react-dom( 客户端 )把剩下一部分渲染完成( 内容小，渲染快 )</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为什么需要服务端渲染？什么情况下进行服务端渲染？当我们要求渲染时间尽量快、页面响应速度快时（优点），才会采用服务器渲染，并且应该“按需”对页面进行渲染 ——“首次加载/首屏”。即服务端渲染的优势在于：由中间层( node端 )为客户端请求初始数据、并由node渲染页面。那客户端渲染和服务端渲染有什么差别？服务端渲染究竟快在哪里呢？<br><a id="more"></a></p>
+<h2 id="原因与思路"><a href="#原因与思路" class="headerlink" title="原因与思路"></a>原因与思路</h2><p>客户端渲染路线：1. 请求一个html -&gt; 2. 服务端返回一个html -&gt; 3. 浏览器下载html里面的js/css文件 -&gt; 4. 等待js文件下载完成 -&gt; 5. 等待js加载并初始化完成 -&gt; 6. js代码终于可以运行，由js代码向后端请求数据( ajax/fetch ) -&gt; 7. 等待后端数据返回 -&gt; 8. react-dom( 客户端 )从无到完整地，把数据渲染为响应页面.<br>服务端渲染路线：1. 请求一个html -&gt; 2. 服务端请求数据( 内网请求快 ) -&gt; 3. 服务器初始渲染<br>（服务端性能好，较快） -&gt; 4. 服务端返回已经有正确内容的页面 -&gt; 5. 客户端请求js/css文件 -&gt; 6. 等待js文件下载完成 -&gt; 7. 等待js加载并初始化完成 -&gt; 8. react-dom( 客户端 )把剩下一部分渲染完成( 内容小，渲染快 )</p>
 <p>说明：对同一个组件，服务端渲染“可视的”一部分( render/componentWillMount部分代码  )，为确保组件有完善的生命周期及事件处理，客户端需要再次渲染。即：服务端渲染，实际上也是需要客户端进行 再次地、但开销很小的二次渲染。</p>
 <p>时间耗时比较：<br>1.数据请求：由服务端请求数据而不是客户端请求数据，这是“快”的一个主要原因。服务端在内网进行请求，数据响应速度快。客户端在不同网络环境进行数据请求，且外网http请求开销大，导致时间差（主要原因）。<br>2.步骤：服务端是先请求数据然后渲染“可视”部分，而客户端是等待js代码下载、加载完成再请求数据、渲染。即：服务端渲染不用等待js代码下载完成再请求数据，并会返回一个已经有内容的页面。<br>3.渲染性能：服务端性能比客户端高，渲染速度快( 猜测，该项数据不详 )。<br>4.渲染内容：服务端渲染会把”可视“部分先渲染，然后交给客户端再作部分渲染。而客户端渲染，则是从无到有，需要经历完整的渲染步骤。</p>
 <h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
@@ -332,7 +332,7 @@
   
   
     <a href="/2017/07/15/qq/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">网页版手机QQ</div>
+      <div class="article-nav-title">Web手Q</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -440,6 +440,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -453,10 +457,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,15 +524,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,7 +544,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,7 +584,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,35 +624,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,19 +636,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,7 +656,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

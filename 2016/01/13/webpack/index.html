@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。我们可以直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译（比如JSX和sass），但我们无须在上面花费太多心思，因为webpack有着各种健全的加载器（loader）在默默处理这些事情。 优势（1）w">
+  <meta name="description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack介绍">
 <meta property="og:url" content="https://lenshen.com/2016/01/13/webpack/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。我们可以直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译（比如JSX和sass），但我们无须在上面花费太多心思，因为webpack有着各种健全的加载器（loader）在默默处理这些事情。 优势（1）w">
+<meta property="og:description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
 <meta property="og:image" content="https://lenshen.com/img/webpack/1.png">
-<meta property="og:updated_time" content="2017-08-06T04:36:11.832Z">
+<meta property="og:updated_time" content="2017-11-11T08:10:54.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack介绍">
-<meta name="twitter:description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。我们可以直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译（比如JSX和sass），但我们无须在上面花费太多心思，因为webpack有着各种健全的加载器（loader）在默默处理这些事情。 优势（1）w">
+<meta name="twitter:description" content="介绍webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
 <meta name="twitter:image" content="https://lenshen.com/img/webpack/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -189,8 +189,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。我们可以直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译（比如JSX和sass），但我们无须在上面花费太多心思，因为webpack有着各种健全的加载器（loader）在默默处理这些事情。</p>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>（1）webpack 是以 commonJS 的形式来书写脚本的，但对 AMD/CMD 的支持也很全面，方便旧项目进行代<br>码迁移。<br>（2）能被模块化的不仅仅是 JS 了，还有css，图片等资源文件。<br>（3）开发便捷，能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等。<br>（4）扩展性强，插件机制完善，特别是支持React热插拔（见 react-hot-loader ）的功能让人眼前一亮。<br><a id="more"></a></p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。<br><a id="more"></a><br>我们可以直接使用 require(XXX) 的形式来引入各模块，即使它们可能需要经过编译（比如JSX和sass），但我们无须在上面花费太多心思，因为webpack有着各种健全的加载器（loader）在默默处理这些事情。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>（1）webpack 是以 commonJS 的形式来书写脚本的，但对 AMD/CMD 的支持也很全面，方便旧项目进行代<br>码迁移。<br>（2）能被模块化的不仅仅是 JS 了，还有css，图片等资源文件。<br>（3）开发便捷，能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等。<br>（4）扩展性强，插件机制完善，特别是支持React热插拔（见 react-hot-loader ）的功能让人眼前一亮。</p>
 <h2 id="与gulp和grunt相比"><a href="#与gulp和grunt相比" class="headerlink" title="与gulp和grunt相比"></a>与gulp和grunt相比</h2><p>Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack可以替代Gulp/Grunt类的工具。<br>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务。<br>Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。如果实在要把二者进行比较，Webpack的处理速度更快更直接，能打包更多不同类型的文件。</p>
 <h2 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h2><p>（1）处理CSS。webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。<br> npm install style-loader css-loader –save-dev<br> 安装postcss-loader，以处理浏览器厂商前缀，npm install postcss-loader autoprefixer –save-dev<br>（2）处理JS。配置JS的loader，处理js后缀的文件，由于使用了es6的语法，所以需要用babel。<br>npm install –save-dev babel-loader babel-core babel-preset-latest<br>（3）处理模板文件，比如html-loader、ejs-loader<br>（4）处理图片及其它文件。安装file-loader：npm install –save-dev file-loader。<br>另外一个loader : url-loader。这个loader的作用是，限制图片的最大值，大于这个值时，以url的形式存在，否则以base64编码存在。url-loader是对file-loader的上层封装，比如webpack中对图片的加载器配置。<br>另外一个loader，图片压缩: image-webpack-loader<br>（5）生成模板。HtmlWebpackPugin插件，该插件的作用是依据一个简单的模板，帮你生成最终的Html5文件，这个文件中自动引用了你打包后的JS文件。每次编译都在文件名中插入一个不同的哈希值。</p>
 <h2 id="Webpack代码分割和按需加载（异步加载）："><a href="#Webpack代码分割和按需加载（异步加载）：" class="headerlink" title="Webpack代码分割和按需加载（异步加载）："></a>Webpack代码分割和按需加载（异步加载）：</h2><p>代码分割就是我们根据实际业务需求将代码进行分割，然后在合适的时候在将其加载进入文档中。 举一个实际应用场景：上次我们做的图片轮播，我们为每张图片都添加一个点击事件，点击以后我们弹出一个对话框，里面介绍一些详细内容，然后可以点击关闭按钮进行关闭。在这个需求中我们发现，对话框这个组件比较特殊，他是在用户点击图片以后才需要加载，如果用户不点击，那么他就没有必要加载出来了。<br>webpack通过代码分割方法将页面必须加载的资源放在bundle.js中，然后对于按需加载的资源通过ajax进行异步加载。webpack通过 require.ensure 来判断是否对资源进行按需加载。<br><img src="/img/webpack/1.png" alt=""><br>在commonjs中有一个Modules/Async/A规范，里面定义了require.ensure语法。webpack实现了它，作用是可以在打包的时候进行代码分片，并异步加载分片后的代码。用法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.ensure([],<span class="function"><span class="keyword">function</span>(<span class="params">require</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> list=<span class="built_in">require</span>(<span class="string">'./list'</span>);</div><div class="line">	list.show()</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
@@ -419,6 +419,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -432,10 +436,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +503,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +523,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +563,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,35 +603,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,19 +615,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +635,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

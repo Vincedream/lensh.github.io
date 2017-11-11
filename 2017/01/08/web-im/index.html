@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。 基于Comet技术的实现   Comet 是一种新的 Web">
+  <meta name="description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。">
 <meta name="keywords" content="ajax,webSocket,comet,xmlSocket">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网页实时聊天的实现">
 <meta property="og:url" content="https://lenshen.com/2017/01/08/web-im/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。 基于Comet技术的实现   Comet 是一种新的 Web">
-<meta property="og:updated_time" content="2017-08-06T03:24:26.054Z">
+<meta property="og:description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。">
+<meta property="og:updated_time" content="2017-11-11T08:03:49.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页实时聊天的实现">
-<meta name="twitter:description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。 基于Comet技术的实现   Comet 是一种新的 Web">
+<meta name="twitter:description" content="基于ajax技术的实现   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基于ajax技术的实现"><a href="#基于ajax技术的实现" class="headerlink" title="基于ajax技术的实现"></a>基于ajax技术的实现</h2><p>   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。</p>
-<h2 id="基于Comet技术的实现"><a href="#基于Comet技术的实现" class="headerlink" title="基于Comet技术的实现"></a>基于Comet技术的实现</h2><p>   Comet 是一种新的 Web 应用架构。基于这种架构开发的应用中，服务器端会主动以异步的方式向客户端程序推送数据，而不需要客户端显式的发出请求。Comet 架构非常适合事件驱动的 Web 应用，以及对交互性和实时性要求较高的应用，如股票交易行情分析、聊天室和 Web 版在线游戏等。<br><a id="more"></a><br>   Pushlet是一种comet实现（Pushlet 是开源的Comet 框架）：在Servlet机制下，数据从服务器的Java对象直接推送（push）到客户端的页面，而无需任何Java applet或者插件的帮助。它使server端可以周期性地更新client的web页面，这与传统的request/response方式不同。<br>   Pushlet基于HTTP流，这种技术常常用在多媒体视频、通讯应用中，比如QuickTime。与装载HTTP页面之后马上关闭HTTP连接的做法相反，Pushlet采用HTTP流方式将新数据源源不断地推送到client，再此期间HTTP连接一直保持打开。有关如何在Java中实现这种Keep-alive的长连接请参看Sun提供的《HTTP Persistent Connection》和W3C的《HTTP1.1规范》。</p>
+        <h2 id="基于ajax技术的实现"><a href="#基于ajax技术的实现" class="headerlink" title="基于ajax技术的实现"></a>基于ajax技术的实现</h2><p>   ajax（异步JavaScript和XML，Asynchronous javascript and xml），它的作用就是可以实现页面与服务器端的无刷新交互。用ajax来实现web聊天室的基本原理是：在页面上每隔一段时间就通过ajax从服务器中获取数据，然后更新页面显示。这种方法简单明了，缺点是实时性不高。<br><a id="more"></a></p>
+<h2 id="基于Comet技术的实现"><a href="#基于Comet技术的实现" class="headerlink" title="基于Comet技术的实现"></a>基于Comet技术的实现</h2><p>   Comet 是一种新的 Web 应用架构。基于这种架构开发的应用中，服务器端会主动以异步的方式向客户端程序推送数据，而不需要客户端显式的发出请求。Comet 架构非常适合事件驱动的 Web 应用，以及对交互性和实时性要求较高的应用，如股票交易行情分析、聊天室和 Web 版在线游戏等。<br>   Pushlet是一种comet实现（Pushlet 是开源的Comet 框架）：在Servlet机制下，数据从服务器的Java对象直接推送（push）到客户端的页面，而无需任何Java applet或者插件的帮助。它使server端可以周期性地更新client的web页面，这与传统的request/response方式不同。<br>   Pushlet基于HTTP流，这种技术常常用在多媒体视频、通讯应用中，比如QuickTime。与装载HTTP页面之后马上关闭HTTP连接的做法相反，Pushlet采用HTTP流方式将新数据源源不断地推送到client，再此期间HTTP连接一直保持打开。有关如何在Java中实现这种Keep-alive的长连接请参看Sun提供的《HTTP Persistent Connection》和W3C的《HTTP1.1规范》。</p>
 <h2 id="基于XMPP协议的实现"><a href="#基于XMPP协议的实现" class="headerlink" title="基于XMPP协议的实现"></a>基于XMPP协议的实现</h2><p>   XMPP（可扩展消息处理现场协议）是基于XML的协议，是专为及时通信系统设计的通信协议，用于即时消息以及在线现场探测。它在促进服务器之间的准即时操作。这个协议可能最终允许因特网用户向因特网上的其他任何人发送即时消息，即使其操作系统和浏览器不同。XMPP的前身是Jabber，一个开源形式组织产生的网络即时通信协议。著名的开源聊天系统服务器Openfire就是基于XMPP协议的Jabber服务器。<br>  可以通过Flash或ajax与Jabber服务器进行交互，实现webIM的功能， </p>
 <h2 id="基于flash的XmlSocket的实现"><a href="#基于flash的XmlSocket的实现" class="headerlink" title="基于flash的XmlSocket的实现"></a>基于flash的XmlSocket的实现</h2><p>   Flash Media Server是一个很强大的流媒体服务器，它基于rtmp协议，提供了强壮的流媒体交互功能。在FMS中，提供一种远程共享对象（SharedObject）的机制，客户端可以创建并连接到服务器端的远程共享对象。可以有很多个客户端连接到同一个远程共享对象中，任何一个客户端对共享对象进行了修改，服务器都会将共享对象的修改信息发送给所有其他连接到这个共享对象的客户端。这种远程共享对象的机制可以很方面地实现以下功能：&middot;       远程控制幻灯片放映   &middot;       文字聊天   &middot;       网络对战   &middot;       远程选择和播放歌曲   &middot;       现场拍卖   &middot;     客户服务应用程序。<br>   远程共享对象很适合用于实现web聊天室中的群聊功能。为每一个群都建立一个远程共享对象，这样的话，任何用户在群上发信息，就可以通过服务器自动发送到所有的群成员。<br>    用远程共享对象来实现单聊是不实际的。对应单聊的实现，我们需要借助socket。客户端通过socket服务器与其他客户端进行私聊。聊天信息通过socket服务器进行转发。<br>   这种方式是效率最高的web聊天室实现方式。</p>
 <h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><p>WebSocket protocol 是HTML5一种新的协议(protocol)。它是实现了浏览器与服务器全双工通信(full-duplex)。<br>现在，很多网站为了实现即时通讯(real-time)，所用的技术都是轮询(polling)。轮询是在特定的的时间间隔(time interval)（如每1秒），由浏览器对服务器发出HTTP request，然后由服务器返回最新的数据给客服端的浏览器。这种传统的HTTP request d的模式带来很明显的缺点 – 浏览器需要不断的向服务器发出请求(request)，然而HTTP request 的header是非常长的，里面包含的数据可能只是一个很小的值，这样会占用很多的带宽。<br>而最比较新的技术去做轮询的效果是Comet – 用了AJAX。但这种技术虽然可达到全双工通信，但依然需要发出请求(reuqest)。<br>在 WebSocket API，浏览器和服务器只需要要做一个握手的动作，然后，浏览器和服务器之间就形成了一条快速通道。两者之间就直接可以数据互相传送。在此WebSocket 协议中，为我们实现即使服务带来了两大好处：Header，互相沟通的Header是很小的-大概只有 2 Bytes。  Server Push，服务器可以主动传送数据给客户端。</p>
@@ -308,18 +308,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/19/nodejs-timer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/29/coding1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          nodejs定时器
+          校招编程题常见题型汇总2
         
       </div>
     </a>
   
   
-    <a href="/2016/12/22/js-async-coding/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS异步编程的解决方案</div>
+    <a href="/2016/12/25/coding/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">校招编程题常见题型汇总1</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -427,6 +427,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -440,10 +444,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,15 +511,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +531,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,7 +571,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,35 +611,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,19 +623,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,7 +643,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

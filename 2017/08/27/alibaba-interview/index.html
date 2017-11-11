@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。  1. 说说你做的那个网页版手机QQ项目的难点。我首先想到了滚动条位置无法还原的问题，也就是点击列表项跳到详情页后再返回时，滚动条位置无法还原的bug。我的解决办法是通过vuex来保存每个组件里的滚动条的位置，然后返回时再滚动到这个位置即可，不过得设置">
+  <meta name="description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。">
 <meta name="keywords" content="面经">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里校招前端面经">
 <meta property="og:url" content="https://lenshen.com/2017/08/27/alibaba-interview/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。  1. 说说你做的那个网页版手机QQ项目的难点。我首先想到了滚动条位置无法还原的问题，也就是点击列表项跳到详情页后再返回时，滚动条位置无法还原的bug。我的解决办法是通过vuex来保存每个组件里的滚动条的位置，然后返回时再滚动到这个位置即可，不过得设置">
-<meta property="og:updated_time" content="2017-08-30T08:06:37.978Z">
+<meta property="og:description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。">
+<meta property="og:updated_time" content="2017-11-11T07:54:50.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里校招前端面经">
-<meta name="twitter:description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。  1. 说说你做的那个网页版手机QQ项目的难点。我首先想到了滚动条位置无法还原的问题，也就是点击列表项跳到详情页后再返回时，滚动条位置无法还原的bug。我的解决办法是通过vuex来保存每个组件里的滚动条的位置，然后返回时再滚动到这个位置即可，不过得设置">
+<meta name="twitter:description" content="阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,10 +187,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。</p>
+        <p>阿里一面是电话面，问得不多，但是挺有深度。面试官一开始就说，看了你的项目，觉得你基础挺好的，那我就不问基础了。然后全程就真的没有问一个基础问题。。<br><a id="more"></a></p>
 <hr>
 <p><strong>1.</strong> 说说你做的那个网页版手机QQ项目的难点。<br>我首先想到了<strong>滚动条位置无法还原</strong>的问题，也就是点击列表项跳到详情页后再返回时，滚动条位置无法还原的bug。我的解决办法是通过vuex来保存每个组件里的滚动条的位置，然后返回时再滚动到这个位置即可，不过得设置滚动时间为0，不然会有明显的滚动过程，用户体验会很差。<br>然后又想到了做IP定位时遇到的<strong>后台express服务端无法获取用户真实ip地址</strong>的问题。其实express是可以获取用户真实ip地址的，只是我的nginx没有写好配置，导致express获取到的始终是127.0.0.1本地ip地址。无论怎么获取，都是这个地址。<br>解决办法是修改nginx的配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">location / &#123;</div><div class="line">   proxy_pass http://localhost:8080;   # 项目真实地址</div><div class="line">　 proxy_set_header Host $host;</div><div class="line">   proxy_set_header X-Real-IP $remote_addr;</div><div class="line">   proxy_set_header REMOTE-HOST $remote_addr;</div><div class="line">   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
 <p>重启nginx： ./nginx -s reload 即可。<br>然后在express服务端里，通过 req.headers[‘x-real-ip’]即可拿到真实ip地址。然后就可以根据这个ip地址，通过淘宝ip地址库，定位到用户的地理位置了。<br>QQ项目地址：<a href="https://github.com/lensh/vue-qq" target="_blank" rel="external">https://github.com/lensh/vue-qq</a>  </p>
 <p><strong>2.</strong> Angular和Vue的双向数据绑定实现的原理？ 如果要你来实现，你会怎样实现？<br>还好之前对底层还是有所了解，看过源码以及一些博客，所以基本答了出来。<br><strong>Angular的实现</strong>： AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。<br>只有当改变$scope的值、使用内置的$interval、$timeout的时候，才会进行“脏检测”。<br>如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。<br><strong>Vue的实现</strong>：核心就是数据劫持+发布/订阅模式，VueJS 使用 ES5 提供的 Object.defineProperty() 方法，监控对数据的操作，从而可以自动触发数据同步。并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的视图，而不是对所有的数据都执行一次检测。<br>具体实现可参考 <a href="https://github.com/lensh/mvvm" target="_blank" rel="external">https://github.com/lensh/mvvm</a>  </p>
 <p><strong>3.</strong> webpack打包后文件体积过大怎么办？<br>很多方法：异步加载模块（代码分割）；提取第三方库（使用cdn或者vender）；代码压缩；去除不必要的插件；去除devtool选项等等。</p>
@@ -202,7 +201,7 @@
 <p><strong>9.</strong> 只用CSS怎样实现标签页的切换效果？<br>利用锚点结合CSS的target伪类就可以了。</p>
 <p><strong>10.</strong> mod_gzip 和mod_deflate的主要区别是什么？使用哪个更好呢？<br>首先一个区别是安装它们的Apache Web服务器版本的差异。Apache 1.x系列没有内建网页压缩技术，所以才去用额外的第三方mod_gzip 模块来执行压缩。而Apache 2.x官方在开发的时候，就把网页压缩考虑进去，内建了mod_deflate 这个模块，用以取代mod_gzip。虽然两者都是使用的Gzip压缩算法，它们的运作原理是类似的。<br>第二个区别是压缩质量。mod_deflate 压缩速度略快而mod_gzip 的压缩比略高。一般默认情况下，mod_gzip 会比mod_deflate 多出4%~6％的压缩量。<br>第三个区别是对服务器资源的占用。 一般来说mod_gzip 对服务器CPU的占用要高一些。mod_deflate 是专门为确保服务器的性能而使用的一个压缩模块，mod_deflate 需要较少的资源来压缩文件。这意味着在高流量的服务器，使用mod_deflate 可能会比mod_gzip 加载速度更快。</p>
 <p><strong>11.</strong> nodejs子进程 spawn，exec，execFile和fork的用法和区别？<br>spawn函数用给定的命令发布一个子进程，只能运行指定的程序，参数需要在列表中给出。<br>exec也是一个创建子进程的函数，与spawn函数不同它可以直接接受一个回调函数作为参数，回调函数有三个参数，分别是err, stdout , stderr。<br>execFile函数与exec函数类似，但execFile函数更显得精简，因为它可以直接执行所指定的文件。<br>fork函数可直接运行Node.js模块，我们可以直接通过指定模块路径而直接进行操作。</p>
-<p><strong>12.</strong> nodejs中定时器函数process.nextTick和setImmediate的区别，优先级。<br>process.nextTick()的回调函数执行的优先级要高于setImmediate()，process.nextTick()属于idle观察者。<br>setImmediate()属check观察者.在每一轮循环检查中,idle观察者先于I/O观察者,I/O观察者先于check观察者。<br>process.nextTick()的回调函数保存在一个数组中，会将异步回调放到当前帧的末尾、io回调之前，如果nextTick过多，会导致io回调不断延后,最后callback堆积太多。<br>setImmediate()的结果则是保存在链表中，会将异步回调放到下一帧,不影响io回调,不会造成callback 堆积。<br>process.nextTick()在每轮循环中会将数组中的回调函数全部执行完，而setImmediate()在每轮循环中执行链表中的一个回调函数。<br>process.nextTick()，效率最高，消费资源小，但会阻塞CPU的后续调用；<br>setTimeout()，精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大；<br>setImmediate()，消耗的资源小，也不会造成阻塞，但效率也是最低的。</p>
+<p><strong>12.</strong> nodejs中定时器函数process.nextTick和setImmediate的区别，优先级。<br>process.nextTick()的回调函数执行的优先级要高于setImmediate()。<br>process.nextTick()属于idle观察者,setImmediate()属check观察者,在每一轮循环检查中,idle观察者先于I/O观察者,I/O观察者先于check观察者。<br>process.nextTick()的回调函数保存在一个数组中，会将异步回调放到当前帧的末尾、io回调之前，如果nextTick过多，会导致io回调不断延后,最后callback堆积太多。setImmediate()的结果则是保存在链表中，会将异步回调放到下一帧,不影响io回调,不会造成callback 堆积。<br>process.nextTick()在每轮循环中会将数组中的回调函数全部执行完，而setImmediate()在每轮循环中执行链表中的一个回调函数。<br>process.nextTick()，效率最高，消费资源小，但会阻塞CPU的后续调用；<br>setTimeout()，精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大；<br>setImmediate()，消耗的资源小，也不会造成阻塞，但效率也是最低的。</p>
 <p><strong>13.</strong> Koa2和Koa1的区别，和express的区别？<br>（1）异步流程控制<br>Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。<br>generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更强。<br>（2）错误处理<br>Express 使用 callback 捕获异常，对于深层次的异常捕获不了，Koa 使用 try catch，能更好地解决异常捕获。</p>
 <p><strong>14.</strong> 一行代码实现数组去重？<br>[…new Set([1,2,3,1,’a’,1,’a’])]</p>
 <p><strong>15.</strong> http2.0的优势？<br>当时大概地讲了一下意思，不过没答完全。后了又复习了下：<br>（1）采用二进制格式传输数据，而非 http1.1 的文本格式，二进制格式在协议的解析和优化扩展上带来更多的优势和可能<br>（2）对消息头采用 HPACK 进行压缩传输，能够节省消息头占用的网络的流量，而 http1.1 每次请求，都会携带大量冗余头信息，浪费了很多带宽资源，头压缩能够很好的解决该问题<br>（3）多路复用，就是多个请求都是通过一个 TCP 连接并发完成，http1.1 虽然通过pipeline也能并发请求，但是多个请求之间的响应会被阻塞的，所以 pipeline 至今也没有被普及应用，而 http2.0做到了真正的并发请求，同时，流还支持优先级和流量控制<br>（4）Server Push，服务端能够更快的把资源推送给客户端，例如服务端可以主动把 JS 和 CSS 文件推送给客户端，而不需要客户端解析 HTML再发送这些请求，当客户端需要的时候，它已经在客户端了。</p>
@@ -317,11 +316,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/28/coding/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/12/koa-middleware/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          校招编程题常见题型汇总1
+          koa中间件解析
         
       </div>
     </a>
@@ -436,6 +435,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -449,10 +452,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,15 +519,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,7 +539,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,7 +579,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,35 +619,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,19 +631,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,7 +651,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

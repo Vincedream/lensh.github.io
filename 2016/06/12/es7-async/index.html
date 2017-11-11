@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：  内置执行器。Generator 函数的执行必须依靠执行器，而 Ays">
+  <meta name="description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：">
 <meta name="keywords" content="ES7,async&#x2F;await,promise">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES7 async&#x2F;await">
 <meta property="og:url" content="https://lenshen.com/2016/06/12/es7-async/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：  内置执行器。Generator 函数的执行必须依靠执行器，而 Ays">
-<meta property="og:updated_time" content="2017-08-06T03:31:05.585Z">
+<meta property="og:description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：">
+<meta property="og:updated_time" content="2017-11-11T08:07:28.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES7 async&#x2F;await">
-<meta name="twitter:description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：  内置执行器。Generator 函数的执行必须依靠执行器，而 Ays">
+<meta name="twitter:description" content="ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,15 +187,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：</p>
+        <p>ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：<br><a id="more"></a></p>
 <ul>
 <li><strong>内置执行器</strong>。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样。</li>
 <li><strong>更好的语义</strong>。async 和 await 相较于 * 和 yield 更加语义化。</li>
 <li><strong>更广的适用性</strong>。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise对象。而 async 函数的 await 命令后面则可以是 Promise 或者 原始类型的值（Number，string，boolean，但这时等同于同步操作）</li>
-<li><strong>返回值是 Promise</strong>。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用</li>
+<li><strong>返回值是 Promise</strong>。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用<h2 id="第一个例子"><a href="#第一个例子" class="headerlink" title="第一个例子"></a>第一个例子</h2>Async/Await应该是目前最简单的异步方案了，首先来看个例子。<br>这里我们要实现一个暂停功能，输入N毫秒，则停顿N毫秒后才继续往下执行。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sleep = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            resolve();</div><div class="line">        &#125;, time);</div><div class="line">    &#125;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> start = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 在这里使用起来就像同步代码那样直观</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'start'</span>);</div><div class="line">    <span class="keyword">await</span> sleep(<span class="number">3000</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'end'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">start();</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<a id="more"></a>
-<h2 id="第一个例子"><a href="#第一个例子" class="headerlink" title="第一个例子"></a>第一个例子</h2><p>Async/Await应该是目前最简单的异步方案了，首先来看个例子。<br>这里我们要实现一个暂停功能，输入N毫秒，则停顿N毫秒后才继续往下执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sleep = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            resolve();</div><div class="line">        &#125;, time);</div><div class="line">    &#125;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> start = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 在这里使用起来就像同步代码那样直观</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'start'</span>);</div><div class="line">    <span class="keyword">await</span> sleep(<span class="number">3000</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'end'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">start();</div></pre></td></tr></table></figure></p>
 <p>控制台先输出start，稍等3秒后，输出了end。</p>
 <h2 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h2><p>async 表示这是一个async函数，await只能用在这个函数里面。<br>await 表示在这里等待promise返回结果了，再继续执行。<br>await 后面跟着的应该是一个promise对象（当然，其他返回值也没关系，只是会立即执行，不过那样就没有意义了…）</p>
 <h2 id="获得返回值"><a href="#获得返回值" class="headerlink" title="获得返回值"></a>获得返回值</h2><p>await等待的虽然是promise对象，但不必写.then(..)，直接可以得到返回值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sleep = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 返回 ‘ok’</span></div><div class="line">            resolve(<span class="string">'ok'</span>);</div><div class="line">        &#125;, time);</div><div class="line">    &#125;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> start = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> sleep(<span class="number">3000</span>);</div><div class="line">    <span class="built_in">console</span>.log(result); <span class="comment">// 收到 ‘ok’</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -437,6 +436,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -450,10 +453,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,15 +520,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,7 +540,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,7 +580,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,35 +620,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,19 +632,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,7 +652,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

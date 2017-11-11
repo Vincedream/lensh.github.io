@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。举例：第一次访问百度官网，会首次请求logo图片：第二次请求logo，请求头信息如下：">
+  <meta name="description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。">
 <meta name="keywords" content="304">
 <meta property="og:type" content="article">
 <meta property="og:title" content="304缓存原理解析">
 <meta property="og:url" content="https://lenshen.com/2015/12/24/304-cache/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。举例：第一次访问百度官网，会首次请求logo图片：第二次请求logo，请求头信息如下：">
+<meta property="og:description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。">
 <meta property="og:image" content="https://lenshen.com/img/304/1.png">
 <meta property="og:image" content="https://lenshen.com/img/304/2.png">
 <meta property="og:image" content="https://lenshen.com/img/304/3.png">
 <meta property="og:image" content="https://lenshen.com/img/304/4.png">
 <meta property="og:image" content="https://lenshen.com/img/304/5.png">
-<meta property="og:updated_time" content="2017-08-06T05:03:08.414Z">
+<meta property="og:updated_time" content="2017-11-11T08:11:10.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="304缓存原理解析">
-<meta name="twitter:description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。举例：第一次访问百度官网，会首次请求logo图片：第二次请求logo，请求头信息如下：">
+<meta name="twitter:description" content="与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。">
 <meta name="twitter:image" content="https://lenshen.com/img/304/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -193,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。<br>举例：第一次访问百度官网，会首次请求logo图片：<br><img src="/img/304/1.png" alt=""><br>第二次请求logo，请求头信息如下：<br><img src="/img/304/2.png" alt=""><br><a id="more"></a><br>服务器响应如下：<br><img src="/img/304/3.png" alt=""></p>
+        <p>与304缓存相关的头部信息有Expires、Cache-Control、Last-Modified、ETag。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。<br><a id="more"></a><br>举例：第一次访问百度官网，会首次请求logo图片：<br><img src="/img/304/1.png" alt=""><br>第二次请求logo，请求头信息如下：<br><img src="/img/304/2.png" alt=""><br>服务器响应如下：<br><img src="/img/304/3.png" alt=""></p>
 <h2 id="强制缓存和对比缓存"><a href="#强制缓存和对比缓存" class="headerlink" title="强制缓存和对比缓存"></a>强制缓存和对比缓存</h2><p>（1）强制缓存<br>服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。在缓存数据未失效的情况下，可以直接使用缓存数据，那么浏览器是如何判断缓存数据是否失效呢？<br>我们知道，在没有缓存数据的时候，浏览器向服务器请求数据时，服务器会将数据和缓存规则一并返回，缓存规则信息包含在响应header中。对于强制缓存来说，响应header中会有两个字段来标明失效规则（Expires/Cache-Control）</p>
 <p><strong>Expires（http1.0）</strong><br>　　Expires的值为服务端返回的到期时间，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。不过Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。另一个问题是，到期时间是由服务端生成的，但是客户端时间可能跟服务端时间有误差，这就会导致缓存命中的误差。所以HTTP 1.1 的版本，使用Cache-Control替代。</p>
 <p><strong>Cache-Control（http1.1）</strong><br>    Cache-Control是最重要的规则。常见的取值有private、public、no-cache、max-age，no-store。<br>private:客户端可以缓存(默认)<br>public:客户端和代理服务器都可缓存（前端的同学，可以认为public和private是一样的）<br>max-age=xxx:缓存的内容将在 xxx 秒后失效<br>no-cache:需要使用对比缓存来验证缓存数据（后面介绍）<br>no-store:所有内容都不会缓存，强制缓存，对比缓存都不会触发（对于前端开发来说，缓存越多越好，so…基本上和它说886）</p>
@@ -432,6 +432,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -445,10 +449,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,15 +516,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +536,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,7 +576,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,35 +616,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,19 +628,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,7 +648,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

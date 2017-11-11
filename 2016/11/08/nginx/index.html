@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev2.安装 openssl（ssl 功能）sudo apt-get intall openssl libssl-dev3.安装 zlib（gzip模块）sudo apt-get install zlib1g-dev4.下载nginx源码包wget  http://">
+  <meta name="description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev">
 <meta name="keywords" content="nginx,nodejs,https,apache,ssl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx服务器配置">
 <meta property="og:url" content="https://lenshen.com/2016/11/08/nginx/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev2.安装 openssl（ssl 功能）sudo apt-get intall openssl libssl-dev3.安装 zlib（gzip模块）sudo apt-get install zlib1g-dev4.下载nginx源码包wget  http://">
-<meta property="og:updated_time" content="2017-08-06T06:18:59.682Z">
+<meta property="og:description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev">
+<meta property="og:updated_time" content="2017-11-11T08:05:00.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx服务器配置">
-<meta name="twitter:description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev2.安装 openssl（ssl 功能）sudo apt-get intall openssl libssl-dev3.安装 zlib（gzip模块）sudo apt-get install zlib1g-dev4.下载nginx源码包wget  http://">
+<meta name="twitter:description" content="一、安装nginx1.安装pcre（rewrite 模块）sudo apt install   libpcre3 libpcre3-dev">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,7 +187,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、安装nginx</strong><br>1.安装pcre（rewrite 模块）<br>sudo apt install   libpcre3 libpcre3-dev<br>2.安装 openssl（ssl 功能）<br>sudo apt-get intall openssl libssl-dev<br>3.安装 zlib（gzip模块）<br>sudo apt-get install zlib1g-dev<br>4.下载nginx源码包<br>wget  <a href="http://nginx.org/download/nginx-1.11.12.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.11.12.tar.gz</a><br>5.解压该tar包<br>tar zxvf nginx-1.11.12.tar.gz<br><a id="more"></a><br>6.编译参数说明<br>–prefix=path   定义一个目录来保存你的nginx的提供功能的文件夹，就这好比我们安装软件的时候软件存放的目录，如果我们在编译的不指定安装位置，那么默认的位置/usr/local/nginx 目录<br>–sbin-path=path 设置nginx执行脚本的位置，这里如果设置在path变量里面，就可以在bash环境下，任意使用nginx命令，默认位置prefix/sbin/nginx  注意这里的prefix是在配置文件里面配置的路径<br>–conf-path=path 配置nginx配置文件的路径，如果不指定这个选项，那么配置文件的默认路径就会是 prefix/conf/nginx.conf<br>–pid-path =path 配置nginx.pid file的路径，一般来说，进程在运行的时候的时候有一个进程id，这个id会保存在pid file里面，默认的pid file的放置位置是prefix/logs/nginx.pid<br>–error-log-path=path 设置错误日志的存放路径，如果不指定，就默认 prefix/logs/error.log<br>–http-log-path= path 设置http访问日志的路径，如果不指定，就默认 prefix/logs/access.log<br>–user=name  设置默认启动进程的用户，如果不指定，就默认 nobody<br>–group=name 设置这个用户所在的用户组，如果不指定，依然是nobody<br>这些是我们常用的编译选项，其他的可以均保持默认，如需特殊指定，可上nginx官网查阅 <a href="http://nginx.org/en/docs/configure.html" target="_blank" rel="external">http://nginx.org/en/docs/configure.html</a></p>
+        <p><strong>一、安装nginx</strong><br>1.安装pcre（rewrite 模块）<br>sudo apt install   libpcre3 libpcre3-dev<br><a id="more"></a><br>2.安装 openssl（ssl 功能）<br>sudo apt-get intall openssl libssl-dev<br>3.安装 zlib（gzip模块）<br>sudo apt-get install zlib1g-dev<br>4.下载nginx源码包<br>wget  <a href="http://nginx.org/download/nginx-1.11.12.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.11.12.tar.gz</a><br>5.解压该tar包<br>tar zxvf nginx-1.11.12.tar.gz<br>6.编译参数说明<br>–prefix=path   定义一个目录来保存你的nginx的提供功能的文件夹，就这好比我们安装软件的时候软件存放的目录，如果我们在编译的不指定安装位置，那么默认的位置/usr/local/nginx 目录<br>–sbin-path=path 设置nginx执行脚本的位置，这里如果设置在path变量里面，就可以在bash环境下，任意使用nginx命令，默认位置prefix/sbin/nginx  注意这里的prefix是在配置文件里面配置的路径<br>–conf-path=path 配置nginx配置文件的路径，如果不指定这个选项，那么配置文件的默认路径就会是 prefix/conf/nginx.conf<br>–pid-path =path 配置nginx.pid file的路径，一般来说，进程在运行的时候的时候有一个进程id，这个id会保存在pid file里面，默认的pid file的放置位置是prefix/logs/nginx.pid<br>–error-log-path=path 设置错误日志的存放路径，如果不指定，就默认 prefix/logs/error.log<br>–http-log-path= path 设置http访问日志的路径，如果不指定，就默认 prefix/logs/access.log<br>–user=name  设置默认启动进程的用户，如果不指定，就默认 nobody<br>–group=name 设置这个用户所在的用户组，如果不指定，依然是nobody<br>这些是我们常用的编译选项，其他的可以均保持默认，如需特殊指定，可上nginx官网查阅 <a href="http://nginx.org/en/docs/configure.html" target="_blank" rel="external">http://nginx.org/en/docs/configure.html</a></p>
 <p>下面是一些不常用的选项<br>–with-http_ssl_module -开启HTTP SSL模块，使NGINX可以支持HTTPS请求。需要安装了OPENSSL<br> –with-http_flv_module<br> –with-http_stub_status_module - 启用 “server status” 页(可有可无)<br> –without-http_gzip_module - 禁用 ngx_http_gzip_module. 如果启用，需要 zlib 。<br> –without-http_ssi_module - 禁用 ngx_http_ssi_module<br>–without-http_referer_module - 禁用 ngx_http_referer_module<br> –without-http_rewrite_module - 禁用 ngx_http_rewrite_module. 如果启用需要 PCRE 。<br> –without-http_proxy_module - 禁用 ngx_http_proxy_module<br> –without-http_fastcgi_module - 禁用 ngx_http_fastcgi_module<br> –without-http_memcached_module - 禁用 ngx_http_memcached_module<br> –without-http_browser_module - 禁用 ngx_http_browser_module<br> –http-proxy-temp-path=PATH - Set path to the http proxy temporary files<br> –http-fastcgi-temp-path=PATH - Set path to the http fastcgi temporary files<br> –without-http - 禁用 HTTP server（用作代理或反向代理）<br> –with-mail - 启用 IMAP4/POP3/SMTP 代理模块<br> –with-mail_ssl_module - 启用 ngx_mail_ssl_module<br> –with-openssl=DIR - Set path to OpenSSL library sources<br>7.源码编译步骤<br>a.切换到解压目录<br>cd nginx-1.11.12<br>b.执行configure命令<br>sudo ./configure  –prefix=/usr/local/nginx   –with-http_stub_status_module –with-http_ssl_module<br>c.执行make命令<br>sudo make<br>d.执行安装命令<br>sudo make install<br>8.查看端口状态：netstat -ano|grep 80<br>9.启动Nginx：sudo /usr/local/nginx/sbin/nginx<br><strong>二、nginx的相关命令</strong><br>先进入到 /usr/local/nginx/sbin/ 目录下，<br>启动   ./nginx<br>停止   ./nginx -s stop<br>重启   ./nginx -s reload<br><strong>三、修改apache2的默认端口</strong><br>1.修改 /etc/apache2/ports.conf 将<br>NameVirtualHost <em>:80<br>Listen 80<br>改为自己需要的端口<br>NameVirtualHost </em>:81<br>Listen 81<br>2.修改/etc/apache2/sites-available/default 将第一行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost *:81&gt;</div><div class="line">#改为自己需要的端口</div><div class="line">&lt;VirtualHost *:81&gt;</div></pre></td></tr></table></figure></p>
 <p><strong>四、部署SSL证书</strong><br>首先得购买证书（一般CA机构会颁发3个证书，即服务器证书、CA证书、根证书），然后生成合成证书（lenshen.com.crt）和私钥（lenshen.com.key），具体怎么生成可参考：<br><a href="http://jingyan.baidu.com/article/154b463178eac928ca8f41a9.html" target="_blank" rel="external">http://jingyan.baidu.com/article/154b463178eac928ca8f41a9.html</a><br>最后把证书（lenshen.com.crt）和私钥（lenshen.com.key）放在 /usr/local/nginx/conf/目录下。<br><strong>五、nginx配置https</strong><br>用vim打开 /usr/local/nginx/conf/nginx.conf<br>1.配置三级域名和端口转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">     listen       443 ssl;</div><div class="line">     server_name  cet.lenshen.com;</div><div class="line"></div><div class="line">     ssl_certificate /usr/local/nginx/conf/lenshen.com.crt;</div><div class="line">     ssl_certificate_key /usr/local/nginx/conf/lenshen.com.key;</div><div class="line"></div><div class="line">     ssl_session_cache    shared:SSL:1m;</div><div class="line">     ssl_session_timeout  5m;</div><div class="line"></div><div class="line">     ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">     ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">     location / &#123;</div><div class="line">        proxy_pass http://localhost:8001; #后端的web服务器</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;</div><div class="line">        fastcgi_param HTTPS $https if_not_empty;</div><div class="line">        proxy_set_header X-Forwarded-Proto https;</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line">server &#123;</div><div class="line">     listen       443 ssl;</div><div class="line">     server_name  qq.lenshen.com;</div><div class="line"></div><div class="line">     ssl_certificate /usr/local/nginx/conf/lenshen.com.crt;</div><div class="line">     ssl_certificate_key /usr/local/nginx/conf/lenshen.com.key;</div><div class="line"></div><div class="line">     ssl_session_cache    shared:SSL:1m;</div><div class="line">     ssl_session_timeout  5m;</div><div class="line"></div><div class="line">     ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">     ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">     location / &#123;</div><div class="line">        proxy_pass http://localhost:8080; #后端的web服务器</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;</div><div class="line">        fastcgi_param HTTPS $https if_not_empty;</div><div class="line">        proxy_set_header X-Forwarded-Proto https;</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"> server &#123;</div><div class="line">     listen       443 ssl;</div><div class="line">     server_name  music.lenshen.com;</div><div class="line"></div><div class="line">     ssl_certificate /usr/local/nginx/conf/lenshen.com.crt;</div><div class="line">     ssl_certificate_key /usr/local/nginx/conf/lenshen.com.key;</div><div class="line"></div><div class="line">     ssl_session_cache    shared:SSL:1m;</div><div class="line">     ssl_session_timeout  5m;</div><div class="line"></div><div class="line">     ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">     ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">     location / &#123;</div><div class="line">        proxy_pass http://localhost:8000; #后端的web服务器</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;</div><div class="line">        fastcgi_param HTTPS $https if_not_empty;</div><div class="line">        proxy_set_header X-Forwarded-Proto https;</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <p>2.配置http重定向到https<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">server &#123;  </div><div class="line">   listen      80;  </div><div class="line">   server_name  lenshen.com;  </div><div class="line">   return      301 https://$server_name$request_uri;  </div><div class="line"> &#125;</div><div class="line"> server &#123;  </div><div class="line">   listen      80;  </div><div class="line">   server_name    qq.lenshen.com;  </div><div class="line">   return      301 https://$server_name$request_uri;  </div><div class="line"> &#125;  </div><div class="line"> server &#123;  </div><div class="line">   listen      80;  </div><div class="line">   server_name    music.lenshen.com;  </div><div class="line">   return      301 https://$server_name$request_uri;  </div><div class="line"> &#125;     </div><div class="line"> server &#123;  </div><div class="line">   listen      80;  </div><div class="line">   server_name    cet.lenshen.com;  </div><div class="line">   return      301 https://$server_name$request_uri;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
@@ -431,6 +431,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -444,10 +448,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,15 +515,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +535,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +575,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,35 +615,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,19 +627,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,7 +647,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

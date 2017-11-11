@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。 规范如下（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。（2） 标准的版本号“必须MUST”采用XYZ的格式，">
+  <meta name="description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。">
 <meta name="keywords" content="语义化版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语义化版本">
 <meta property="og:url" content="https://lenshen.com/2016/10/17/semantic-version/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。 规范如下（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。（2） 标准的版本号“必须MUST”采用XYZ的格式，">
-<meta property="og:updated_time" content="2017-08-06T03:25:13.542Z">
+<meta property="og:description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。">
+<meta property="og:updated_time" content="2017-11-11T08:05:19.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="语义化版本">
-<meta name="twitter:description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。 规范如下（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。（2） 标准的版本号“必须MUST”采用XYZ的格式，">
+<meta name="twitter:description" content="版本格式：主版本号.次版本号.修订号，版本号递增规则如下：（1）主版本号：当你做了不兼容的API 修改，（2）次版本号：当你做了向下兼容的功能性新增，（3）修订号：当你做了向下兼容的问题修正。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>版本格式：主版本号.次版本号.修订号，版本号递增规则如下：<br>（1）主版本号：当你做了不兼容的API 修改，<br>（2）次版本号：当你做了向下兼容的功能性新增，<br>（3）修订号：当你做了向下兼容的问题修正。</p>
-<h2 id="规范如下"><a href="#规范如下" class="headerlink" title="规范如下"></a>规范如下</h2><p>（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。<br>（2） 标准的版本号“必须MUST”采用XYZ的格式，其中X、Y和Z为非负的整数，且“禁止MUST NOT”在数字前方补零。X是主版本号、Y是次版本号、而Z为修订号。每个元素“必须MUST”以数值来递增。例如：1.9.1 -&gt; 1.10.0 -&gt; 1.11.0。<br>（3）标记版本号的软件发行后，“禁止MUST NOT”改变该版本软件的内容。任何修改都“必须MUST”以新版本发行。<br><a id="more"></a><br>（4）主版本号为零（0.yz）的软件处于开发初始阶段，一切都可能随时被改变。这样的公共API 不应该被视为稳定版。<br>（5）1.0.0 的版本号用于界定公共API 的形成。这一版本之后所有的版本号更新都基于公共API 及其修改内容。<br>（6）修订号Z（xyZ | x &gt; 0）“必须MUST”在只做了向下兼容的修正时才递增。这里的修正指的是针对不正确结果而进行的内部修改。<br>（7）次版本号Y（xYz | x &gt; 0）“必须MUST”在有向下兼容的新功能出现时递增。在任何公共API的功能被标记为弃用时也“必须MUST”递增。也“可以MAY”在内部程序有大量新功能或改进被加入时递增，其中“可以MAY”包括修订级别的改变。每当次版本号递增时，修订号“必须MUST”归零。<br>（8）主版本号X（Xyz | X &gt; 0）“必须MUST”在有任何不兼容的修改被加入公共API时递增。其中“可以MAY”包括次版本号及修订级别的改变。每当主版本号递增时，次版本号和修订号“必须MUST”归零。<br>（9）先行版本号“可以MAY”被标注在修订版之后，先加上一个连接号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII码的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。数字型的标识符号“禁止MUST NOT”在前方补零。先行版的优先级低于相关联的标准版本。被标上先行版本号则表示这个版本并非稳定而且可能无法达到兼容的需求。范例：1.0​​.0-alpha、1.0.0-alpha.1、 1.0.0-0.3.7、1.0.0-x.7.z.92。<br>（10）版本编译信息“可以MAY”被标注在修订版或先行版本号之后，先加上一个加号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。当判断版本的优先层级时，版本编译信息“可SHOULD”被忽略。因此当两个版本只有在版本编译信息有差别时，属于相同的优先层级。范例：1.0.0-alpha+001、1.0.0+20130313144700、 1.0.0-beta+exp.sha.5114f85。</p>
+        <p>版本格式：主版本号.次版本号.修订号，版本号递增规则如下：<br>（1）主版本号：当你做了不兼容的API 修改，<br>（2）次版本号：当你做了向下兼容的功能性新增，<br>（3）修订号：当你做了向下兼容的问题修正。<br><a id="more"></a></p>
+<h2 id="规范如下"><a href="#规范如下" class="headerlink" title="规范如下"></a>规范如下</h2><p>（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。<br>（2） 标准的版本号“必须MUST”采用XYZ的格式，其中X、Y和Z为非负的整数，且“禁止MUST NOT”在数字前方补零。X是主版本号、Y是次版本号、而Z为修订号。每个元素“必须MUST”以数值来递增。例如：1.9.1 -&gt; 1.10.0 -&gt; 1.11.0。<br>（3）标记版本号的软件发行后，“禁止MUST NOT”改变该版本软件的内容。任何修改都“必须MUST”以新版本发行。<br>（4）主版本号为零（0.yz）的软件处于开发初始阶段，一切都可能随时被改变。这样的公共API 不应该被视为稳定版。<br>（5）1.0.0 的版本号用于界定公共API 的形成。这一版本之后所有的版本号更新都基于公共API 及其修改内容。<br>（6）修订号Z（xyZ | x &gt; 0）“必须MUST”在只做了向下兼容的修正时才递增。这里的修正指的是针对不正确结果而进行的内部修改。<br>（7）次版本号Y（xYz | x &gt; 0）“必须MUST”在有向下兼容的新功能出现时递增。在任何公共API的功能被标记为弃用时也“必须MUST”递增。也“可以MAY”在内部程序有大量新功能或改进被加入时递增，其中“可以MAY”包括修订级别的改变。每当次版本号递增时，修订号“必须MUST”归零。<br>（8）主版本号X（Xyz | X &gt; 0）“必须MUST”在有任何不兼容的修改被加入公共API时递增。其中“可以MAY”包括次版本号及修订级别的改变。每当主版本号递增时，次版本号和修订号“必须MUST”归零。<br>（9）先行版本号“可以MAY”被标注在修订版之后，先加上一个连接号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII码的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。数字型的标识符号“禁止MUST NOT”在前方补零。先行版的优先级低于相关联的标准版本。被标上先行版本号则表示这个版本并非稳定而且可能无法达到兼容的需求。范例：1.0​​.0-alpha、1.0.0-alpha.1、 1.0.0-0.3.7、1.0.0-x.7.z.92。<br>（10）版本编译信息“可以MAY”被标注在修订版或先行版本号之后，先加上一个加号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。当判断版本的优先层级时，版本编译信息“可SHOULD”被忽略。因此当两个版本只有在版本编译信息有差别时，属于相同的优先层级。范例：1.0.0-alpha+001、1.0.0+20130313144700、 1.0.0-beta+exp.sha.5114f85。</p>
 <h2 id="版本范围高级用法"><a href="#版本范围高级用法" class="headerlink" title="版本范围高级用法"></a>版本范围高级用法</h2><p>在版本范围的高级用法中，与原始的比较器不同，组合不仅仅限于空格和双竖线，它有以下几种方式。<br>连接符（-）范围 X.Y.Z - A.B.C<br>连接符（-）范围 X.Y.Z - A.B.C<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">下面表示的闭包集合</div><div class="line">1.2.3 - 2.3.4  等价于  &gt;=1.2.3 &lt;=2.3.4</div><div class="line">如果范围中的第一个版本号只有一部分，剩下的部分以零填充。</div><div class="line">1.2 - 2.3.4  等价于  &gt;=1.2.0 &lt;=2.3.4</div><div class="line">如果范围中的第二个版本号只有一部分，代表范围中包含了这个版本。</div><div class="line">1.2.3 - 2.3 等价于  &gt;=1.2.3 &lt;2.4.0</div><div class="line">1.2.3 - 2  等价于  &gt;=1.2.3 &lt;3.0.0</div><div class="line">X范围 1.2.x 1.X 1.2.* *</div><div class="line">X, x 或者 * 可以用在主版本号、此版本号以及修订版本号的任何一个上面。</div><div class="line">*  等价于  &gt;=0.0.0 (任何版本都满足)</div><div class="line">1.x  等价于  &gt;=1.0.0 &lt;2.0.0 (只要满足主版本号即可)</div><div class="line">1.2.x  等价于  &gt;=1.2.0 &lt;1.3.0 (需要满足主版本和此版本号)</div><div class="line">部分版本号的含义与X范围表示含义一样，所以X或者*都是可以省略的。</div><div class="line">&quot;&quot; (空字符串)  等价于  *  等价于  &gt;=0.0.0</div><div class="line">1  等价于  1.x.x  等价于  &gt;=1.0.0 &lt;2.0.0</div><div class="line">1.2  等价于  1.2.x  等价于  &gt;=1.2.0 &lt;1.3.0</div><div class="line">波浪线（~）范围 ~1.2.3 ~1.2 ~1</div><div class="line">~1.2.3  等价于  &gt;=1.2.3 &lt;1.(2+1).0  等价于  &gt;=1.2.3 &lt;1.3.0</div><div class="line">~1.2  等价于  &gt;=1.2.0 &lt;1.(2+1).0  等价于  &gt;=1.2.0 &lt;1.3.0 (类似于 1.2.x)</div><div class="line">~1  等价于  &gt;=1.0.0 &lt;(1+1).0.0  等价于  &gt;=1.0.0 &lt;2.0.0 (类似于 1.x)</div><div class="line">~0.2.3  等价于  &gt;=0.2.3 &lt;0.(2+1).0  等价于  &gt;=0.2.3 &lt;0.3.0</div><div class="line">~0.2  等价于  &gt;=0.2.0 &lt;0.(2+1).0  等价于  &gt;=0.2.0 &lt;0.3.0 (类似于 0.2.x)</div><div class="line">~0  等价于  &gt;=0.0.0 &lt;(0+1).0.0  等价于  &gt;=0.0.0 &lt;1.0.0 (类似于 0.x)</div><div class="line">~1.2.3-beta.2  等价于  &gt;=1.2.3-beta.2 &lt;1.3.0 注意版本为1.2.3且大于等于beta.2的测试版本在范围内，因此 1.2.3-beta.4 满足条件，而1.2.4-beta.2不满足条件。</div><div class="line">补注号（^）范围 ^1.2.3 ^0.2.5 ^0.0.4</div><div class="line">允许在不修改[major, minor, patch]中最左非零数字的更改。换句话说，允许在 1.0.0 及以上版本对次版本号和修订版本号的更新，允许在 0.1.0以及以上版本对修订版本号更新，版本为 0.0.X 不允许更新。</div><div class="line">^1.2.3  等价于  &gt;=1.2.3 &lt;2.0.0</div><div class="line">^0.2.3  等价于  &gt;=0.2.3 &lt;0.3.0</div><div class="line">^0.0.3  等价于  &gt;=0.0.3 &lt;0.0.4</div><div class="line">^1.2.3-beta.2  等价于  &gt;=1.2.3-beta.2 &lt;2.0.0</div><div class="line">^0.0.3-beta  等价于  &gt;=0.0.3-beta &lt;0.0.4</div><div class="line">^1.2.x  等价于  &gt;=1.2.0 &lt;2.0.0</div><div class="line">^0.0.x  等价于  &gt;=0.0.0 &lt;0.1.0</div><div class="line">^0.0  等价于  &gt;=0.0.0 &lt;0.1.0</div><div class="line">^1.x  等价于  &gt;=1.0.0 &lt;2.0.0</div><div class="line">^0.x  等价于  &gt;=0.0.0 &lt;1.0.0</div></pre></td></tr></table></figure></p>
 
       
@@ -413,6 +413,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -426,10 +430,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,15 +497,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,7 +517,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,7 +557,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,35 +597,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,19 +609,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,7 +629,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要涉及大数各位循环求和、快速幂求模、N的阶乘(大数)、阶乘的位数、n个数的最小公倍数、费波尼茨找规律。1.大数各位循环求和给定一个大数(可能有一千位)，然后各位相加求和，会得到一个数，如果这个数还不是个位数，则继续各位相加求和，直至其和是个位数。例如39，求和(3+9)会得到12，但12还不是个位数，所以继续求和(1+2)，得到3，3是个位数，所以结果是3。InputThe input file">
-<meta name="keywords" content="算法">
+  <meta name="description" content="koa是由express原班人马打造的一个更小、更富有表现力、更健壮的web框架。">
+<meta name="keywords" content="koa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="校招编程题常见题型汇总2">
-<meta property="og:url" content="https://lenshen.com/2017/08/29/coding1/index.html">
+<meta property="og:title" content="koa中间件解析">
+<meta property="og:url" content="https://lenshen.com/2017/09/12/koa-middleware/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="主要涉及大数各位循环求和、快速幂求模、N的阶乘(大数)、阶乘的位数、n个数的最小公倍数、费波尼茨找规律。1.大数各位循环求和给定一个大数(可能有一千位)，然后各位相加求和，会得到一个数，如果这个数还不是个位数，则继续各位相加求和，直至其和是个位数。例如39，求和(3+9)会得到12，但12还不是个位数，所以继续求和(1+2)，得到3，3是个位数，所以结果是3。InputThe input file">
-<meta property="og:updated_time" content="2017-08-29T15:25:19.139Z">
+<meta property="og:description" content="koa是由express原班人马打造的一个更小、更富有表现力、更健壮的web框架。">
+<meta property="og:image" content="https://lenshen.com/img/koa2/3.png">
+<meta property="og:updated_time" content="2017-11-11T07:54:15.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="校招编程题常见题型汇总2">
-<meta name="twitter:description" content="主要涉及大数各位循环求和、快速幂求模、N的阶乘(大数)、阶乘的位数、n个数的最小公倍数、费波尼茨找规律。1.大数各位循环求和给定一个大数(可能有一千位)，然后各位相加求和，会得到一个数，如果这个数还不是个位数，则继续各位相加求和，直至其和是个位数。例如39，求和(3+9)会得到12，但12还不是个位数，所以继续求和(1+2)，得到3，3是个位数，所以结果是3。InputThe input file">
+<meta name="twitter:title" content="koa中间件解析">
+<meta name="twitter:description" content="koa是由express原班人马打造的一个更小、更富有表现力、更健壮的web框架。">
+<meta name="twitter:image" content="https://lenshen.com/img/koa2/3.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -167,35 +169,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-coding1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-koa-middleware" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      校招编程题常见题型汇总2
+      koa中间件解析
     </h1>
   
 
         
-        <a href="/2017/08/29/coding1/" class="archive-article-date">
-  	<time datetime="2017-08-29T14:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-29</time>
+        <a href="/2017/09/12/koa-middleware/" class="archive-article-date">
+  	<time datetime="2017-09-12T11:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>主要涉及大数各位循环求和、快速幂求模、N的阶乘(大数)、阶乘的位数、n个数的最小公倍数、费波尼茨找规律。<br><strong>1.大数各位循环求和</strong><br>给定一个大数(可能有一千位)，然后各位相加求和，会得到一个数，如果这个数还不是个位数，则继续各位相加求和，直至其和是个位数。例如39，求和(3+9)会得到12，但12还不是个位数，所以继续求和(1+2)，得到3，3是个位数，所以结果是3。<br><strong>Input</strong><br>The input file will contain a list of positive integers, one per line. The end of the input will be indicated by an integer value of zero.<br><strong>Output</strong><br>For each integer in the input, output its digital root on a separate line of the output.<br><a id="more"></a><br><strong>Sample Input</strong><br>24<br>39<br>0<br><strong>Sample Output</strong><br>6<br>3<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> str[<span class="number">1000</span>];</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; str)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(str[<span class="number">0</span>] == <span class="string">'0'</span>) <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(str); i++)</div><div class="line">        &#123;</div><div class="line">            sum += str[i] - <span class="string">'0'</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(sum &gt;= <span class="number">10</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">            <span class="keyword">while</span>(sum)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">int</span> temp = sum % <span class="number">10</span>;</div><div class="line">                j += temp;</div><div class="line">                sum /= <span class="number">10</span>;</div><div class="line">            &#125;</div><div class="line">            sum = j;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>2.快速幂求模</strong><br>求a^b的幂的个位数,即(a^b)mod c<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> res = <span class="number">1</span>;</div><div class="line">    a %= c; <span class="comment">//先求出个位数</span></div><div class="line">    <span class="keyword">while</span> (b)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>)  <span class="comment">// b是奇数时,我们通过res=(res*a)%c来弥补多出来的这一项</span></div><div class="line">            res = (res * a) % c;</div><div class="line">        a = (a * a) % c;  <span class="comment">//每次循环时，都和自己相乘，再取积的个位数。其实每a</span></div><div class="line">        <span class="comment">//才保存了每次循环时的结果</span></div><div class="line">        b &gt;&gt;= <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a, b;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; fun(a, b, <span class="number">10</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line">快速幂取模: 求a^b mod c = ?</div><div class="line">基本公式：a^b mod c = (a mod c)^b mod c   时间复杂度上没有改进，仍为O(b)</div><div class="line">快速幂算法。</div><div class="line">http://www.cnblogs.com/Howe-Young/p/4097277.html</div><div class="line">*/</div></pre></td></tr></table></figure></p>
-<p><strong>3.N的阶乘(大数)</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;memory.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 10000</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> BASE 100000<span class="comment">//base只是一个基度，对最终取值并没有影响，相反，base取值愈大，计算量愈小  </span></span></div><div class="line"><span class="comment">//base发生改变的时候，下面的输出也要相应地做出调整，否则也会输出错误答案！除非当base取10！</span></div><div class="line"><span class="keyword">int</span> h[MAX];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, j, k, carry;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) != EOF)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(h, <span class="number">0</span>, MAX * <span class="keyword">sizeof</span>(<span class="keyword">int</span>)); <span class="comment">//赋值，每一个都置为0</span></div><div class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>, h[MAX - <span class="number">1</span>] = <span class="number">1</span>; i &lt;= n; ++i) <span class="comment">//运用递归，并且h[1]=1;</span></div><div class="line">            <span class="keyword">for</span>(k = MAX - <span class="number">1</span>, carry = <span class="number">0</span>; k &gt;= <span class="number">0</span>; --k) <span class="comment">//从最后一位开始相乘,依次向前与每一位相乘</span></div><div class="line">            &#123;</div><div class="line">                carry += i * h[k];</div><div class="line">                h[k] = carry % BASE;</div><div class="line">                carry /= BASE; <span class="comment">//carry表示进位</span></div><div class="line">            &#125;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; MAX &amp;&amp; h[j] == <span class="number">0</span>; ++j); <span class="comment">//从0位开始搜索，找到不为0的第一个数</span></div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, h[j++]); <span class="comment">//像是这个输出，就很妙了，第一位可能不足五位，就地输出！</span></div><div class="line">        <span class="keyword">for</span>(; j &lt; MAX; ++j)</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%05d"</span>, h[j]); <span class="comment">//处在中间的值也可能没有五位，这时候要注意了，往左边加0，凑足5位，不然答案会出错！</span></div><div class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>4.求阶乘的位数</strong><br>求一个数的阶乘的位数，这个数最大可能是10000000。</p>
-<p>常识:任意一个正整数a的位数等于(int)log10(a)+1。<br>证明如下： 对于任意一个给定的正整数a，假设10^(x-1)&lt;=a&lt;10^x，那么显然a的位数为x位，又因为<br>  log10(10^(x-1))&lt;=log10(a)&lt;(log10(10^x))<br>  即x-1&lt;=log10(a)  则(int)log10(a)=x-1,<br>  即(int)log10(a)+1=x<br>  即a的位数是(int)log10(a)+1<br>我们知道了一个正整数a的位数等于(int)log10(a) + 1，现在来求n的阶乘的位数：<br>假设A=n!=1<em>2</em>3<em>……</em>n，那么我们要求的就是(int)log10(A)+1，<br>而log10(A)=log10(1<em>2</em>3<em>……n)  （根据log10(a</em>b) = log10(a) + log10(b)有）<br>         =log10(1)+log10(2)+log10(3)+……+log10(n)<br>现在我们终于找到方法，问题解决了，我们将求n的阶乘的位数分解成了求n个数对10取对数的和，并且对于其中任意一个数，都在正常的数字范围之类。<br>总结一下：n的阶乘的位数等于<br>  (int)(log10(1)+log10(2)+log10(3)+……+log10(n)) + 1</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(n--)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> a;</div><div class="line">            <span class="keyword">double</span> s = <span class="number">0</span>;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; a;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a; i++)</div><div class="line">            &#123;</div><div class="line">                s += <span class="built_in">log10</span>(i);</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; (<span class="keyword">int</span>)s + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>5.n个数的最小公倍数</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(b != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> c = a % b;</div><div class="line">        a = b;</div><div class="line">        b = c;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> N;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; N;</div><div class="line">    <span class="keyword">while</span>(N--)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> m, n;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</div><div class="line">        m--;</div><div class="line">        <span class="keyword">while</span>(m--)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> temp;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; temp;</div><div class="line">            <span class="keyword">int</span> k = gcd(n, temp); <span class="comment">//先求最大公约数</span></div><div class="line">            n = temp / k * n;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>6.费波尼茨找规律</strong><br>已知:F(0) = 7, F(1) = 11, F(n) = F(n-1) + F(n-2) (n&gt;=2) , 求F[n]是不是3的倍数.</p>
-<p>找规律：<br>7 11 18 29 47 76 123 199 322  521 843 1364  2207  3571  5778<br>0 1  2  3  4  5  6   7   8     9  10  11     12    13   14<br>1 2  0  2  1  1  0   1   1    2   0    2     2     1   0<br>第一行是值，第二行是编号，第三行是余3的值，可以看到基本上就是从第3个数(0)开始，4个一循环，0说明能被3整除。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">2</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"yes"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>koa是由express原班人马打造的一个更小、更富有表现力、更健壮的web框架。<br><a id="more"></a><br>在我眼中，koa的确是比express轻量的多，koa给我的感觉更像是一个中间件框架，koa只是一个基础的架子，需要用到的相应的功能时，用相应的中间件来实现就好，诸如路由系统等。一个更好的点在于，express是基于回调来处理，至于回调到底有多么的不好，大家可以自行搜索来看。koa1基于的co库，所以koa1利用Generator来代替回调，而koa2由于node对async/await的支持，所以koa2利用的是async/await。关于async以及co库等，大家可以参考我之前写过的一篇文章（理解async）。koa可以说是一个各种中间件的架子，下面就来看一下koa对于中间件部分的实现：<br><strong> koa1的中间件 </strong><br>koa1主要利用的是Generator来实现，一般来说，koa1的一个中间件大概是长这个样子的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params">next</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">    <span class="keyword">yield</span> next;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params">next</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</div><div class="line">    <span class="keyword">yield</span> next;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>);</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样的输出会是1, 2, 3, 4, 5，koa的中间件的实现主要依靠的是koa-compose：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">middleware</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> *(<span class="params">next</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (!next) next = noop();</div><div class="line"></div><div class="line">    <span class="keyword">var</span> i = middleware.length;</div><div class="line">    <span class="comment">// 组合中间件</span></div><div class="line">    <span class="keyword">while</span> (i--) &#123;</div><div class="line">      next = middleware[i].call(<span class="keyword">this</span>, next);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">yield</span> *next;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> *<span class="title">noop</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>源码非常的简单，实现的功能就是将所有的中间件串联起来，首先给倒数第一个中间件传入一个noop作为其next，再将这个整理后的倒数第一个中间作为next传入倒数第二个中间件，最终得到的next就是整理后的第一个中间件。说起来比较复杂，画图来看：<br><img src="/img/koa2/3.png" alt=""><br>实现的效果如同上图，与redux需要实现的目标类似，只要遇到了yield next就去执行下一个中间件，利用co库很容易将这个流程串联起来，下面来简单模拟下，中间件完整的实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> middlewares = [];</div><div class="line"></div><div class="line"><span class="keyword">const</span> getTestMiddWare = <span class="function">(<span class="params">loggerA, loggerB</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> *(<span class="params">next</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(loggerA);</div><div class="line">        <span class="keyword">yield</span> next;</div><div class="line">        <span class="built_in">console</span>.log(loggerB);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> mid1 = getTestMiddWare(<span class="number">1</span>, <span class="number">4</span>),</div><div class="line">    mid2 = getTestMiddWare(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> getData = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">'数据已经取出'</span>), <span class="number">1000</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> *<span class="title">response</span>(<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="comment">// 模拟异步读取数据库数据</span></div><div class="line">    <span class="keyword">const</span> data = <span class="keyword">yield</span> getData;</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;</div><div class="line"></div><div class="line">middlewares.push(mid1, mid2, response);</div><div class="line"><span class="comment">// 简单模拟co库</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> ctx = <span class="keyword">this</span>,</div><div class="line">        args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove, reject</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> gen === <span class="string">'function'</span>) gen = gen.apply(ctx, args);</div><div class="line">        <span class="keyword">if</span> (!gen || <span class="keyword">typeof</span> gen.next !== <span class="string">'function'</span>) <span class="keyword">return</span> resolve(gen);</div><div class="line"></div><div class="line">        <span class="keyword">const</span> baseHandle = <span class="function"><span class="params">handle</span> =&gt;</span> res =&gt; &#123;</div><div class="line">            <span class="keyword">let</span> ret;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                ret = gen[handle](res);</div><div class="line">            &#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">                reject(e);</div><div class="line">            &#125;</div><div class="line">            next(ret);</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">const</span> onFulfilled = baseHandle(<span class="string">'next'</span>),</div><div class="line">            onRejected = baseHandle(<span class="string">'throw'</span>);</div><div class="line">            </div><div class="line">        onFulfilled();</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (ret.done) <span class="keyword">return</span> reslove(ret.value);</div><div class="line">            <span class="comment">// 将yield的返回值转换为Proimse</span></div><div class="line">            <span class="keyword">let</span> value = <span class="literal">null</span>;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> ret.value.then !== <span class="string">'function'</span>) &#123;</div><div class="line">                value = co(ret.value);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                value = ret.value;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (value) <span class="keyword">return</span> value.then(onFulfilled, onRejected);</div><div class="line">            <span class="keyword">return</span> onRejected(<span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'yield type error'</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用方式</span></div><div class="line"><span class="keyword">const</span> gen = compose(middlewares);</div><div class="line">co(gen);</div></pre></td></tr></table></figure></p>
+<p><strong> koa2的中间件 </strong><br>随着node对于async/await的支持，貌似不需要再借助于co这种工具库了，直接利用原生的就好，于是koa也做出了改变，来看目前的koa-compose：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span> (<span class="params">middleware</span>) </span>&#123;</div><div class="line">  <span class="comment">// 参数检验</span></div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">context, next</span>) </span>&#123;</div><div class="line">    <span class="comment">// last called middleware #</span></div><div class="line">    <span class="keyword">let</span> index = <span class="number">-1</span></div><div class="line">    <span class="keyword">return</span> dispatch(<span class="number">0</span>)</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (i &lt;= index) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'next() called multiple times'</span>))</div><div class="line">      index = i</div><div class="line">      <span class="keyword">let</span> fn = middleware[i]</div><div class="line">      <span class="comment">// 最后一个中间件的调用</span></div><div class="line">      <span class="keyword">if</span> (i === middleware.length) fn = next</div><div class="line">      <span class="keyword">if</span> (!fn) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</div><div class="line">      <span class="comment">// 用Promise包裹中间件，方便await调用</span></div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(fn(context, <span class="function"><span class="keyword">function</span> <span class="title">next</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> dispatch(i + <span class="number">1</span>)</div><div class="line">        &#125;))</div><div class="line">      &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>koa-compose利用了Promise，koa2的中间件的参数也有一个变为了两个，而且执行下一个的中间件利用的是await next()，要达到与上面的示例代码的相同效果，需要更改中间件的写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> middlewares = [];</div><div class="line"><span class="keyword">const</span> getTestMiddWare = <span class="function">(<span class="params">loggerA, loggerB</span>) =&gt;</span> <span class="keyword">async</span> (ctx, next) =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(loggerA);</div><div class="line">    <span class="keyword">await</span> next();</div><div class="line">    <span class="built_in">console</span>.log(loggerB);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> mid1 = getTestMiddWare(<span class="number">1</span>, <span class="number">4</span>),</div><div class="line">    mid2 = getTestMiddWare(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line"><span class="keyword">const</span> response = <span class="keyword">async</span> () =&gt; &#123;</div><div class="line">    <span class="comment">// 模拟异步读取数据库数据</span></div><div class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> getData();</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> getData = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">'数据已经取出'</span>), <span class="number">1000</span>);</div><div class="line">&#125;);</div><div class="line">middlewares.push(mid1, mid2);</div><div class="line"></div><div class="line"><span class="comment">// 调用方式</span></div><div class="line">compose(middlewares)(<span class="literal">null</span>, response);</div></pre></td></tr></table></figure></p>
+<p><strong> 如何做到兼容 </strong><br>可以看到的是，koa1与koa2对于中间件的实现还是有着很多的不同的，将koa1的中间件直接拿到koa2下面来使用肯定是会出现错误的，如何兼容这两个版本也成了一个问题，koa团队写了一个包来是koa1的中间件可以用于koa2中，叫做koa-convert，先来看看这个包怎么使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> *<span class="title">mid3</span>(<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>, <span class="string">'koa1的中间件'</span>);</div><div class="line">    <span class="keyword">yield</span> next;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>, <span class="string">'koa1的中间件'</span>);</div><div class="line">&#125;</div><div class="line">convert.compose(mid3)</div></pre></td></tr></table></figure></p>
+<p>来看下这个包实现的思路：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将参数转为数组，对每一个koa1的中间件执行convert操作</span></div><div class="line">convert.compose = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</div><div class="line">    arr = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> compose(arr.map(convert))</div><div class="line">&#125;</div><div class="line"><span class="comment">// 关键在于convert的实现</span></div><div class="line"><span class="keyword">const</span> convert = <span class="function"><span class="params">mw</span> =&gt;</span> (ctx, next) =&gt; &#123;</div><div class="line">    <span class="comment">// 借助co库，返回一个Promise，同时执行yield</span></div><div class="line">    <span class="keyword">return</span> co.call(ctx, mw.call(ctx, createGenerator(next)));</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> * <span class="title">createGenerator</span> (<span class="params">next</span>) </span>&#123;</div><div class="line">  <span class="comment">/*</span></div><div class="line">     next为koa-compomse中：</div><div class="line">     function next () &#123;</div><div class="line">         return dispatch(i + 1)</div><div class="line">     &#125;</div><div class="line">  */</div><div class="line">  <span class="keyword">return</span> <span class="keyword">yield</span> next()</div><div class="line">  <span class="comment">// 执行完koa1的中间件，又回到了利用await执行koa2中间件的正轨</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>个人感觉koa-convert的思路就是对Generator封装一层Promise，使上一个中间件可以利用await next()的方式调用，对于Generator的执行，利用co库，从而达到了兼容的目的。</p>
 
       
 
@@ -230,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">koa</a>
         		</li>
       		
 		</ul>
@@ -286,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://lenshen.com/2017/08/29/coding1/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://lenshen.com/2017/09/12/koa-middleware/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +301,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/01/sort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常用排序算法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/28/coding/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">校招编程题常见题型汇总1</div>
+    <a href="/2017/08/27/alibaba-interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里校招前端面经</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -419,6 +411,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -432,10 +428,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +495,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +515,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +555,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,35 +595,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,19 +607,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +627,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

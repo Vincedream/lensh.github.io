@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。JavaScript，作为一门处于高">
+  <meta name="description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES标准每年发布一次。">
 <meta name="keywords" content="ES8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES8 新特性">
 <meta property="og:url" content="https://lenshen.com/2017/07/05/es8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。JavaScript，作为一门处于高">
-<meta property="og:updated_time" content="2017-08-06T07:04:27.913Z">
+<meta property="og:description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES标准每年发布一次。">
+<meta property="og:updated_time" content="2017-11-11T07:57:27.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES8 新特性">
-<meta name="twitter:description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。JavaScript，作为一门处于高">
+<meta name="twitter:description" content="ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES标准每年发布一次。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,7 +187,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39 正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES 标准每年发布一次。我们都知道 ES6 是在2015年发布的，ES7 是在2016年发布的，但是估计会有很少数人知道 ES5 是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。<br>JavaScript，作为一门处于高速发展期的开发语言，正在变的越来越完善、稳定。我们必须拥抱这些变化，并且我们需要把ES8加入到我们的技术栈中。<br>如果您想对 ES8 做一个深入、彻底的了解，您可以查阅Web 资源或者PDF 资源。其他的读者，您可以直接查阅本文，因为本文将涵盖 ES8 主要的新特性，并且会附上代码示例。<br><a id="more"></a></p>
+        <p>ES8 或者说是 ES2017 已经在今年6月底的时候被 TC39正式发布。似乎我们在最近的一年里就已经谈论了很多有关 ECMA 的事情。现在的 ES标准每年发布一次。<br><a id="more"></a><br>我们都知道 ES6 是在2015年发布的，ES7是在2016年发布的，但是估计会有很少数人知道 ES5是在何时发布的。答案是2009年，是在 JavaScript 逐渐变的流行之前发布的。JavaScript，作为一门处于高速发展期的开发语言，正在变的越来越完善、稳定。我们必须拥抱这些变化，并且我们需要把ES8加入到我们的技术栈中。<br>如果您想对 ES8 做一个深入、彻底的了解，您可以查阅Web 资源或者PDF 资源。其他的读者，您可以直接查阅本文，因为本文将涵盖 ES8 主要的新特性，并且会附上代码示例。</p>
 <h2 id="字符串填充"><a href="#字符串填充" class="headerlink" title="字符串填充"></a>字符串填充</h2><p>在 String 对象中，ES8 增加了两个新的函数： padStart 和 padEnd 。正如其名，这俩函数的作用就是在字符串的头部和尾部增加新的字符串，并且返回一个具有指定长度的新的字符串。你可以使用指定的字符、字符串或者使用函数提供的默认值－空格来填充源字符串。具体的函数申明如下：<br>str.padStart(targetLength,[padString])<br>str.padEnd(targetLength,[padString])<br>正如你所看到的，这俩函数的第一个参数（必输）是 targetLength ，这个参数指的是设定这俩函数最后返回的字符串的长度。第二个参数 padString 是可选参数，代表你想要填充的内容，默认值是空格。具体代码示例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="string">'es8'</span>.padStart(<span class="number">2</span>);          <span class="comment">// 'es8'</span></div><div class="line"><span class="string">'es8'</span>.padStart(<span class="number">5</span>);          <span class="comment">// '  es8'</span></div><div class="line"><span class="string">'es8'</span>.padStart(<span class="number">6</span>, <span class="string">'woof'</span>);  <span class="comment">// 'wooes8'</span></div><div class="line"><span class="string">'es8'</span>.padStart(<span class="number">14</span>, <span class="string">'wow'</span>);  <span class="comment">// 'wowwowwowwoes8'</span></div><div class="line"><span class="string">'es8'</span>.padStart(<span class="number">7</span>, <span class="string">'0'</span>);     <span class="comment">// '0000es8'</span></div><div class="line"></div><div class="line"><span class="string">'es8'</span>.padEnd(<span class="number">2</span>);          <span class="comment">// 'es8'</span></div><div class="line"><span class="string">'es8'</span>.padEnd(<span class="number">5</span>);          <span class="comment">// 'es8  '</span></div><div class="line"><span class="string">'es8'</span>.padEnd(<span class="number">6</span>, <span class="string">'woof'</span>);  <span class="comment">// 'es8woo'</span></div><div class="line"><span class="string">'es8'</span>.padEnd(<span class="number">14</span>, <span class="string">'wow'</span>);  <span class="comment">// 'es8wowwowwowwo'</span></div><div class="line"><span class="string">'es8'</span>.padEnd(<span class="number">7</span>, <span class="string">'6'</span>);     <span class="comment">// 'es86666'</span></div></pre></td></tr></table></figure></p>
 <h2 id="values和entries函数"><a href="#values和entries函数" class="headerlink" title="values和entries函数"></a>values和entries函数</h2><p>在 Object 中，ES8 也新增了两个新的函数，分别是 Object.values 函数和 Object.entries 函数。Object.values 函数将会返回一个数组，该数组的内容是函数参数（一个对象）可遍历属性的属性值。数组中得到的属性值的顺序与你在对参数对象使用 for in 语句时获取到的属性值的顺序一致。<br>函数声明如下：<br>Object.values(obj)<br>参数 obj 就是源对象，它可以是一个对象或者一个数组（因为数组可以看作是数组下标为 key ，数组元素为 value 的特殊对象）。具体的代码示例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="string">'xxx'</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="built_in">Object</span>.values(obj); <span class="comment">// ['xxx', 1]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> obj = [<span class="string">'e'</span>, <span class="string">'s'</span>, <span class="string">'8'</span>]; <span class="comment">// same as &#123; 0: 'e', 1: 's', 2: '8' &#125;;</span></div><div class="line"><span class="built_in">Object</span>.values(obj); <span class="comment">// ['e', 's', '8']</span></div><div class="line"></div><div class="line"><span class="comment">// when we use numeric keys, the values returned in a numerical </span></div><div class="line"><span class="comment">// order according to the keys</span></div><div class="line"><span class="keyword">const</span> obj = &#123; <span class="number">10</span>: <span class="string">'xxx'</span>, <span class="number">1</span>: <span class="string">'yyy'</span>, <span class="number">3</span>: <span class="string">'zzz'</span> &#125;;</div><div class="line"><span class="built_in">Object</span>.values(obj); <span class="comment">// ['yyy', 'zzz', 'xxx']</span></div><div class="line"><span class="built_in">Object</span>.values(<span class="string">'es8'</span>); <span class="comment">// ['e', 's', '8']</span></div></pre></td></tr></table></figure></p>
 <p>介绍完 Object.values 函数，接下来继续介绍 Object.entries 函数。 Object.entries 函数与 Object.values 函数类似，也是返回一个数组，只不过这个数组是一个以源对象（参数）的可枚举<br>属性的键值对为数组 [key, value] 的 n 行 2 列的数组。它的返回顺序与 Object.values 函数类似<br>。它的函数声明如下：<br>Object.entries(obj)<br>示例代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="string">'xxx'</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="built_in">Object</span>.entries(obj); <span class="comment">// [['x', 'xxx'], ['y', 1]]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> obj = [<span class="string">'e'</span>, <span class="string">'s'</span>, <span class="string">'8'</span>];</div><div class="line"><span class="built_in">Object</span>.entries(obj); <span class="comment">// [['0', 'e'], ['1', 's'], ['2', '8']]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> obj = &#123; <span class="number">10</span>: <span class="string">'xxx'</span>, <span class="number">1</span>: <span class="string">'yyy'</span>, <span class="number">3</span>: <span class="string">'zzz'</span> &#125;;</div><div class="line"><span class="built_in">Object</span>.entries(obj); <span class="comment">// [['1', 'yyy'], ['3', 'zzz'], ['10': 'xxx']]</span></div><div class="line"><span class="built_in">Object</span>.entries(<span class="string">'es8'</span>); <span class="comment">// [['0', 'e'], ['1', 's'], ['2', '8']]</span></div></pre></td></tr></table></figure></p>
@@ -313,7 +313,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          网页版手机QQ
+          Web手Q
         
       </div>
     </a>
@@ -428,6 +428,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -441,10 +445,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +512,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,7 +532,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,7 +572,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,35 +612,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,19 +624,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,7 +644,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

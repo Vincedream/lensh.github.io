@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。直接安装node.js 7.6：node.js官网地址https://nodejs.orgnvm管理多版本node.js：可以用nvm 进行node版本进行管理Mac系统安装nvm https://github.com/creationix/nvm#manual-">
+  <meta name="description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。">
 <meta name="keywords" content="ES6,nodejs,ES7,async&#x2F;await,koa2,generator">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Koa2入门及原理解析">
 <meta property="og:url" content="https://lenshen.com/2017/03/27/koa2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。直接安装node.js 7.6：node.js官网地址https://nodejs.orgnvm管理多版本node.js：可以用nvm 进行node版本进行管理Mac系统安装nvm https://github.com/creationix/nvm#manual-">
+<meta property="og:description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。">
 <meta property="og:image" content="https://lenshen.com/img/koa2/1.png">
 <meta property="og:image" content="https://lenshen.com/img/koa2/2.png">
-<meta property="og:updated_time" content="2017-08-06T07:06:27.545Z">
+<meta property="og:updated_time" content="2017-11-11T08:01:55.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Koa2入门及原理解析">
-<meta name="twitter:description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。直接安装node.js 7.6：node.js官网地址https://nodejs.orgnvm管理多版本node.js：可以用nvm 进行node版本进行管理Mac系统安装nvm https://github.com/creationix/nvm#manual-">
+<meta name="twitter:description" content="环境准备因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。">
 <meta name="twitter:image" content="https://lenshen.com/img/koa2/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -190,9 +190,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。<br>直接安装node.js 7.6：node.js官网地址<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nvm管理多版本node.js：可以用nvm 进行node版本进行管理<br>Mac系统安装nvm <a href="https://github.com/creationix/nvm#manual-install" target="_blank" rel="external">https://github.com/creationix/nvm#manual-install</a><br>windows系统安装nvm <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a><br>Ubuntu系统安装nvm <a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a><br>npm 版本3.x以上</p>
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>因为node.js v7.6.0开始完全支持async/await，不需要加flag，所以node.js环境都要7.6.0以上。<br><a id="more"></a><br>直接安装node.js 7.6：node.js官网地址<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nvm管理多版本node.js：可以用nvm 进行node版本进行管理<br>Mac系统安装nvm <a href="https://github.com/creationix/nvm#manual-install" target="_blank" rel="external">https://github.com/creationix/nvm#manual-install</a><br>windows系统安装nvm <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a><br>Ubuntu系统安装nvm <a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a><br>npm 版本3.x以上</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="安装koa2"><a href="#安装koa2" class="headerlink" title="安装koa2"></a>安装koa2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//初始化package.json</div><div class="line">$ npm init</div><div class="line"></div><div class="line">//安装koa2 </div><div class="line">$ npm install koa</div></pre></td></tr></table></figure>
-<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//hello world 代码</span></div><div class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</div><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</div><div class="line"></div><div class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</div><div class="line">  ctx.body = <span class="string">'hello koa2'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'[demo] start-quick is starting at port 3000'</span>)</div></pre></td></tr></table></figure>
 <h3 id="启动demo"><a href="#启动demo" class="headerlink" title="启动demo"></a>启动demo</h3><p>由于koa2是基于async/await操作中间件，目前node.js7.x的harmony模式下才能使用，所以启动的时的脚<br>本如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node index.js.</div></pre></td></tr></table></figure></p>
 <p>访问http:localhost:3000，效果如下:<br><img src="/img/koa2/1.png" alt=""></p>
@@ -453,6 +452,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -466,10 +469,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,15 +536,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,7 +556,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,7 +596,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,35 +636,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,19 +648,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,7 +668,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

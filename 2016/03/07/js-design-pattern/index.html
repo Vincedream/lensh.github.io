@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。单例模式的优点是：  可以用来划分命名空间，减少全局变量的数量。 使用单例模式可以使代码组织的更为一致，使代码容易阅读和维护。 可以被实例化，且实例化一次。  单例模式如果有实例化的话，那么只实例化一次，要实现一个单例模式的话，我们无非就是使用一个变量来标识该类是否被实例化，">
+  <meta name="description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS设计模式">
 <meta property="og:url" content="https://lenshen.com/2016/03/07/js-design-pattern/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。单例模式的优点是：  可以用来划分命名空间，减少全局变量的数量。 使用单例模式可以使代码组织的更为一致，使代码容易阅读和维护。 可以被实例化，且实例化一次。  单例模式如果有实例化的话，那么只实例化一次，要实现一个单例模式的话，我们无非就是使用一个变量来标识该类是否被实例化，">
-<meta property="og:updated_time" content="2017-08-06T04:12:19.722Z">
+<meta property="og:description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。">
+<meta property="og:updated_time" content="2017-11-11T08:08:42.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS设计模式">
-<meta name="twitter:description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。单例模式的优点是：  可以用来划分命名空间，减少全局变量的数量。 使用单例模式可以使代码组织的更为一致，使代码容易阅读和维护。 可以被实例化，且实例化一次。  单例模式如果有实例化的话，那么只实例化一次，要实现一个单例模式的话，我们无非就是使用一个变量来标识该类是否被实例化，">
+<meta name="twitter:description" content="（1）单例模式单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,14 +187,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>（1）单例模式</strong><br>单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。<br>单例模式的优点是：</p>
+        <p><strong>（1）单例模式</strong><br>单例模式是一个用来划分命名空间并将一批属性和方法组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。<br><a id="more"></a><br>单例模式的优点是：</p>
 <ul>
 <li>可以用来划分命名空间，减少全局变量的数量。</li>
 <li>使用单例模式可以使代码组织的更为一致，使代码容易阅读和维护。</li>
 <li>可以被实例化，且实例化一次。</li>
 </ul>
 <p>单例模式如果有实例化的话，那么只实例化一次，要实现一个单例模式的话，我们无非就是使用一个变量来标识该类是否被实例化，如果未被实例化的话，那么我们可以实例化一次，否则的话，直接返回已经被实例化的对象。<br>示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//单例模式通用方法</span></div><div class="line"><span class="keyword">var</span> singleton = <span class="function"><span class="keyword">function</span>(<span class="params"> fn </span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> result || ( result = fn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> ) );</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建弹窗的单例</span></div><div class="line"><span class="keyword">var</span> createMask = singleton( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;	</div><div class="line">	<span class="keyword">return</span> <span class="built_in">document</span>.body.appendChild( <span class="built_in">document</span>.createElement(<span class="string">'div'</span>) );	</div><div class="line">&#125;);</div><div class="line">createMask();</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
 <p><strong>（2）工厂模式</strong><br>工厂模式是为了解决多个类似对象声明的问题;也就是为了解决实列化对象产生重复的问题。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age,sex</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    obj.name = name;</div><div class="line">    obj.age = age;</div><div class="line">    obj.sex = sex;</div><div class="line">    obj.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>优点：能解决多个相似的问题。<br>缺点：不能知道对象识别的问题(对象的类型不知道)。<br><strong>（3）观察者模式（发布-订阅模式）</strong><br>发布—订阅模式又叫观察者模式，它定义了对象间的一种一对多的关系，让多个观察者对象同时监听某一个主体对象，当一个对象发生改变时，所有依赖于它的对象都将得到通知。<br>优点：支持简单的广播通信，当对象状态发生改变时，会自动通知已经订阅过的对象。发布者与订阅者耦合性降低，发布者只管发布一条消息出去，它不关心这条消息如何被订阅者使用，同时，订阅者只监听发布者的事件名，只要发布者的事件名不变，它不管发布者如何改变。<br>缺点：创建订阅者需要消耗一定的时间和内存。虽然可以弱化对象之间的联系，如果过度使用的话，反而使代码不好理解及代码不好维护等等。<br>示例：ajax请求回调后处理信息：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$.ajax(<span class="string">"http://127.0.0.1/index.php"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	Obj.trigger(<span class="string">"success"</span>,data);  <span class="comment">// 发布请求成功后的消息</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">// 下面我们来订阅此消息，比如我现在订阅渲染数据这个消息；</span></div><div class="line">Obj.listen(<span class="string">"success"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	renderData(data);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 订阅动画这个消息</span></div><div class="line">Obj.listen(<span class="string">"success"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	doAnimate(data); </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>封装一个全局的发布-订阅模式对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> list = &#123;&#125;,</div><div class="line">          listen,</div><div class="line">          trigger,</div><div class="line">          remove;</div><div class="line">          listen = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(!list[key]) &#123;</div><div class="line">                list[key] = [];</div><div class="line">            &#125;</div><div class="line">            list[key].push(fn);</div><div class="line">        &#125;;</div><div class="line">        trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">                 fns = list[key];</div><div class="line">            <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++];) &#123;</div><div class="line">                fn.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        remove = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> fns = list[key];</div><div class="line">            <span class="keyword">if</span>(!fns) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(!fn) &#123;</div><div class="line">                fns &amp;&amp; (fns.length = <span class="number">0</span>);</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">var</span> i = fns.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">                    <span class="keyword">var</span> _fn = fns[i];</div><div class="line">                    <span class="keyword">if</span>(_fn === fn) &#123;</div><div class="line">                        fns.splice(i,<span class="number">1</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">listen</span>: listen,</div><div class="line">            <span class="attr">trigger</span>: trigger,</div><div class="line">            <span class="attr">remove</span>: remove</div><div class="line">        &#125;</div><div class="line">&#125;)();</div><div class="line"><span class="comment">// 测试代码如下：</span></div><div class="line">Event.listen(<span class="string">"color"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">size</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"尺码为:"</span>+size); <span class="comment">// 打印出尺码为42</span></div><div class="line">&#125;);</div><div class="line">Event.trigger(<span class="string">"color"</span>,<span class="number">42</span>);</div></pre></td></tr></table></figure></p>
@@ -435,6 +434,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -448,10 +451,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,15 +518,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,7 +538,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,7 +578,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,35 +618,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,19 +630,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,7 +650,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

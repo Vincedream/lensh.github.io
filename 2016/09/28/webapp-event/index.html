@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容">
+  <meta name="description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。">
 <meta name="keywords" content="web app,tap事件,touch事件,FastClick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端Click点击300毫秒延迟及其解决办法">
 <meta property="og:url" content="https://lenshen.com/2016/09/28/webapp-event/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容">
-<meta property="og:updated_time" content="2017-08-06T03:25:41.885Z">
+<meta property="og:description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。">
+<meta property="og:updated_time" content="2017-11-11T08:06:03.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端Click点击300毫秒延迟及其解决办法">
-<meta name="twitter:description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容">
+<meta name="twitter:description" content="快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,9 +187,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。<br>移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容或者图片放大，再次双击，浏览器会将网页缩放至原始比例。<br>浏览器捕获第一次单击后，会先等待一段时间，如果在这段时间区间里用户未进行下一次点击，则浏览器会做单击事件的处理。如果这段时间里用户进行了第二次单击操作，则浏览器会做双击事件处理。这段时间就是上面提到的300毫秒延迟。那么如何避免延迟呢？</p>
-<a id="more"></a>
-<p><strong>方法1：禁止缩放</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,</div><div class="line">user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure></p>
+        <p>快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。<br><a id="more"></a><br>移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容或者图片放大，再次双击，浏览器会将网页缩放至原始比例。<br>浏览器捕获第一次单击后，会先等待一段时间，如果在这段时间区间里用户未进行下一次点击，则浏览器会做单击事件的处理。如果这段时间里用户进行了第二次单击操作，则浏览器会做双击事件处理。这段时间就是上面提到的300毫秒延迟。那么如何避免延迟呢？<br><strong>方法1：禁止缩放</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,</div><div class="line">user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure></p>
 <p>使用这个方法必须完全禁用缩放来达到目的，虽然大部分移动端能解决这个延迟问题，但是部分苹果手机还是不行。<br><strong>方法2：利用fastclick.js</strong><br>FastClick 是 FT Labs 专门为解决移动端浏览器 300 毫秒点击延迟问题所开发的一个轻量级的库。简而言之，FastClick在检测到touchend事件的时候，会通过 DOM 自定义事件立即触发一个模拟click事件，并把浏览器在300毫秒之后真正触发的click事件阻止掉。使用方法如下:<br>第一步：在页面中引入fastclick.js文件。<br>第二步：在js文件中添加以下代码<br>在 window load 事件之后，在body上调用FastClick.attach()即可。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </div><div class="line">	FastClick.attach( <span class="built_in">document</span>.body );  </div><div class="line">&#125;,<span class="literal">false</span> );</div></pre></td></tr></table></figure></p>
 <p>如果你项目使用了JQuery，就将上面的代码改写成：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    </div><div class="line">	FastClick.attach(<span class="built_in">document</span>.body);    </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p><strong>方法3：指针事件</strong><br>指针事件最初由微软提出，现已进入 W3C 规范的候选推荐标准阶段。指针事件是一个新的 web 事件系列，相应的规范旨在使用一个单独的事件模型，对所有输入类型，包括鼠标 (mouse)、触摸 (touch)、触控 (stylus) 等，进行统一的处理。用css设置-ms-touch-action: none，那么对应的元素在被点击之后，浏览器不会启动缩放操作，也就避免了这个300ms延迟，但目前只有IE10+支持，目前touch开发的重点在safari和chrome指针事件目前兼容性不太好，不知道在以后会不会更加支持。<br><strong>方法4：jQuery和zepto.js都支持tap事件取代click事件</strong><br>但是tap事件可能会出现“点透”事件。<br>问题由来：zepto的tap通过监听绑定在document上的touch事件来完成tap事件的模拟，及tap事件是冒泡到document上触发的。在点击完成时的tap事件(touchstart\touchend)需要冒泡到document上才会触发，而在冒泡到document之前，用户手的接触屏幕(touchstart)和离开屏幕(touchend)是会触发click事件的,因为click事件有延迟触发(这就是为什么移动端不用click而用tap的原因)(大概是300ms,为了实现safari的双击事件的设计)，所以在执行完tap事件之后，弹出来的选择组件马上就隐藏了，此时click事件还在延迟的300ms之中，当300ms到来的时候，click到的其实不是完成而是隐藏之后的下方的元素，如果正下方的元素绑定的有click事件此时便会触发，如果没有绑定click事件的话就当没click，但是正下方的是input输入框(或者select选择框或者单选复选框)，点击默认聚焦而弹出输入键盘，也就出现了上面的点透现象。</p>
@@ -430,6 +428,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -443,10 +445,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,15 +512,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,7 +532,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,7 +572,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,35 +612,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,19 +624,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,7 +644,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

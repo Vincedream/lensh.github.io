@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。 原理一个完整的 EIO">
+  <meta name="description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io底层是engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。">
 <meta name="keywords" content="nodejs,socket.io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="socket.io原理和使用">
 <meta property="og:url" content="https://lenshen.com/2017/05/10/socket.io/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。 原理一个完整的 EIO">
-<meta property="og:updated_time" content="2017-08-05T06:52:48.255Z">
+<meta property="og:description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io底层是engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。">
+<meta property="og:updated_time" content="2017-11-11T08:00:24.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="socket.io原理和使用">
-<meta name="twitter:description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。 原理一个完整的 EIO">
+<meta name="twitter:description" content="介绍socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io底层是engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io 底层是 engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>一个完整的 EIO Socket 包括多个 XHR 和 WebSocket 连接。前端：EIO Socket 通过一个 XHR (XMLHttprequest) 握手。前端发送一个 XHR，告诉服务端我要开始 XHR 长轮询了。<br>后端返回的数据里面包括一个 open 标志(数字 0 表示), 以及一个 sid 和 upgrades 字段。sid 是本次 EIO Socket 的会话 ID，因为一次 EIO Socket 包含了多个请求，而后端又会同时连接多个 EIO Socket，sid 的作用就相当于 SESSION ID。另一个字段 upgrades，正常情况下是 [‘websocket’]，表示可以把连接方式从长轮询升级到 WebSocket.前端在发送第一个 XHR 的时候就开始了 XHR 长轮询，这个时候如果有收发数据的需求，是通过长轮询实现的。<br><a id="more"></a><br>所谓长轮询，是指前端发送一个 request，服务端会等到有数据需要返回时再 response. 前端收到 response 后马上发送下一次 request。这样就可以实现双向通信。前端收到握手的 upgrades 后，EIO 会检测浏览器是否支持 WebSocket，如果支持，就会启动一个 WebSocket 连接，然后通过这个 WebSocket 往服务器发一条内容为 probe, 类型为 ping 的数据。如果这时服务器返回了内容为 probe, 类型为 pong 的数据，前端就会把前面建立的 HTTP 长轮询停掉，后面只使用 WebSocket 通道进行收发数据。EIO Socket 生命周期内，会间隔一段时间 ping - pong 一次，用来测试网络是否正常。<br>比如 socket.io 里面这样的代码：io.emit(‘add user’, ‘m’)<br>在 engine.io 里面是这样：eio.send(‘message’, ‘2[“add user”,”m”]’) // 2 是 socket.io 定义的包类型<br>再例如，engine.io-client 需要在 open 之后才能 send，而 socket.io 就不需要，open 之前 emit 的数据会在 open 之后再发出。另外 socket.io 还提供了 namespace，复用, 自动重连等特性。服务端：服务端使用 ws 库实现 WebSocket 协议。socket.io 服务启动时，会先启动一个 ws 服务。socket.io 会监听 HTTP 服务器的 upgrade 和 request 事件。当 upgrade 事件触发时，说明可能是 WebSocket 握手，先简单校验下，然后把请求交给 ws 服务进行处理，拿到 WebSocket 对象。当 request 事件触发时，根据 url 路径判断是不是 socket.io 的 XHR 请求，拿到 res 和 res 对象。这样就可以正确接收和返回客户端数据了，具体处理过程和前<br>端部分是对应的。</p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>socket.io 是基于 WebSocket 的 C-S 实时通信库，socket.io底层是engine.io，这个库实现了跨平台的双向通信。engine.io 使用了 WebSocket 和 XMLHttprequest（或JSONP） 封装了一套自己的 Socket 协议（暂时叫 EIO Socket），在低版本浏览器里面使用长轮询替代 WebSocket。<br><a id="more"></a></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>一个完整的 EIO Socket 包括多个 XHR 和 WebSocket 连接。前端：EIO Socket 通过一个 XHR (XMLHttprequest) 握手。前端发送一个 XHR，告诉服务端我要开始 XHR 长轮询了。<br>后端返回的数据里面包括一个 open 标志(数字 0 表示), 以及一个 sid 和 upgrades 字段。sid 是本次 EIO Socket 的会话 ID，因为一次 EIO Socket 包含了多个请求，而后端又会同时连接多个 EIO Socket，sid 的作用就相当于 SESSION ID。另一个字段 upgrades，正常情况下是 [‘websocket’]，表示可以把连接方式从长轮询升级到 WebSocket.前端在发送第一个 XHR 的时候就开始了 XHR 长轮询，这个时候如果有收发数据的需求，是通过长轮询实现的。<br>所谓长轮询，是指前端发送一个 request，服务端会等到有数据需要返回时再 response. 前端收到 response 后马上发送下一次 request。这样就可以实现双向通信。前端收到握手的 upgrades 后，EIO 会检测浏览器是否支持 WebSocket，如果支持，就会启动一个 WebSocket 连接，然后通过这个 WebSocket 往服务器发一条内容为 probe, 类型为 ping 的数据。如果这时服务器返回了内容为 probe, 类型为 pong 的数据，前端就会把前面建立的 HTTP 长轮询停掉，后面只使用 WebSocket 通道进行收发数据。EIO Socket 生命周期内，会间隔一段时间 ping - pong 一次，用来测试网络是否正常。<br>比如 socket.io 里面这样的代码：io.emit(‘add user’, ‘m’)<br>在 engine.io 里面是这样：eio.send(‘message’, ‘2[“add user”,”m”]’) // 2 是 socket.io 定义的包类型<br>再例如，engine.io-client 需要在 open 之后才能 send，而 socket.io 就不需要，open 之前 emit 的数据会在 open 之后再发出。另外 socket.io 还提供了 namespace，复用, 自动重连等特性。服务端：服务端使用 ws 库实现 WebSocket 协议。socket.io 服务启动时，会先启动一个 ws 服务。socket.io 会监听 HTTP 服务器的 upgrade 和 request 事件。当 upgrade 事件触发时，说明可能是 WebSocket 握手，先简单校验下，然后把请求交给 ws 服务进行处理，拿到 WebSocket 对象。当 request 事件触发时，根据 url 路径判断是不是 socket.io 的 XHR 请求，拿到 res 和 res 对象。这样就可以正确接收和返回客户端数据了，具体处理过程和前<br>端部分是对应的。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li><p>服务端(结合Express/Koa):</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Server</span></div><div class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">'express'</span></div><div class="line"><span class="keyword">import</span> http <span class="keyword">from</span> <span class="string">'http'</span></div><div class="line"><span class="keyword">import</span> socketio <span class="keyword">from</span> <span class="string">'socket.io'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express()</div><div class="line"><span class="keyword">const</span> server = http.createServer(app)</div><div class="line"><span class="keyword">const</span> io = socketio(server)</div><div class="line">server.listen(<span class="number">3000</span>)</div><div class="line"></div><div class="line">io.on(<span class="string">'connection'</span>, (socket)=&gt;&#123;</div><div class="line">  socket.emit(<span class="string">'news'</span>, &#123; <span class="attr">hello</span>: <span class="string">'world'</span> &#125;)</div><div class="line">  socket.on(<span class="string">'my other event'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -314,11 +314,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/12/cet-search/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/01/sort/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          英语四六级成绩查询系统
+          常用排序算法
         
       </div>
     </a>
@@ -433,6 +433,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -446,10 +450,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,15 +517,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,7 +537,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,7 +577,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,35 +617,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,19 +629,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,7 +649,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

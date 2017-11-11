@@ -8,12 +8,19 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://lenshen.com/page/3/index.html">
+  <meta name="description" content="一、冒泡排序冒泡排序是最简单的排序算法。">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用排序算法">
+<meta property="og:url" content="https://lenshen.com/2017/06/01/sort/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、冒泡排序冒泡排序是最简单的排序算法。">
+<meta property="og:image" content="https://lenshen.com/img/sort/sort.png">
+<meta property="og:updated_time" content="2017-11-11T08:00:39.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="常用排序算法">
+<meta name="twitter:description" content="一、冒泡排序冒泡排序是最简单的排序算法。">
+<meta name="twitter:image" content="https://lenshen.com/img/sort/sort.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,449 +169,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-sort" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/08/nginx/">nginx服务器配置</a>
+    <h1 class="article-title" itemprop="name">
+      常用排序算法
     </h1>
   
 
         
-        <a href="/2016/11/08/nginx/" class="archive-article-date">
-  	<time datetime="2016-11-08T07:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-08</time>
+        <a href="/2017/06/01/sort/" class="archive-article-date">
+  	<time datetime="2017-06-01T13:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、安装nginx</strong><br>1.安装pcre（rewrite 模块）<br>sudo apt install   libpcre3 libpcre3-dev<br>2.安装 openssl（ssl 功能）<br>sudo apt-get intall openssl libssl-dev<br>3.安装 zlib（gzip模块）<br>sudo apt-get install zlib1g-dev<br>4.下载nginx源码包<br>wget  <a href="http://nginx.org/download/nginx-1.11.12.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.11.12.tar.gz</a><br>5.解压该tar包<br>tar zxvf nginx-1.11.12.tar.gz<br>
-        
-          <a class="article-more-a" href="/2016/11/08/nginx/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">https</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">apache</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssl</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/08/nginx/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-semantic-version" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/17/semantic-version/">语义化版本</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/17/semantic-version/" class="archive-article-date">
-  	<time datetime="2016-10-17T06:54:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>版本格式：主版本号.次版本号.修订号，版本号递增规则如下：<br>（1）主版本号：当你做了不兼容的API 修改，<br>（2）次版本号：当你做了向下兼容的功能性新增，<br>（3）修订号：当你做了向下兼容的问题修正。</p>
-<h2 id="规范如下"><a href="#规范如下" class="headerlink" title="规范如下"></a>规范如下</h2><p>（1）使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。<br>（2） 标准的版本号“必须MUST”采用XYZ的格式，其中X、Y和Z为非负的整数，且“禁止MUST NOT”在数字前方补零。X是主版本号、Y是次版本号、而Z为修订号。每个元素“必须MUST”以数值来递增。例如：1.9.1 -&gt; 1.10.0 -&gt; 1.11.0。<br>（3）标记版本号的软件发行后，“禁止MUST NOT”改变该版本软件的内容。任何修改都“必须MUST”以新版本发行。<br>
-        
-          <a class="article-more-a" href="/2016/10/17/semantic-version/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">语义化版本</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/17/semantic-version/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-webapp-event" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/28/webapp-event/">移动端Click点击300毫秒延迟及其解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/28/webapp-event/" class="archive-article-date">
-  	<time datetime="2016-09-28T08:10:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快速响应是所有 UI 实现的重中之重。研究表明，当延迟超过 100 毫秒，用户就能感受到界面的卡顿。然而，出于对手指触摸滑动的区分，移动端页面对于触摸事件会有300毫秒的延迟，导致多数用户感觉移动设备上基于 HTML 的 web 应用界面响应速度慢。<br>移动浏览器为什么会设置300毫秒的等待时间呢？这与双击缩放的方案有关。平时我们有可能已经注意到了，双击缩放，即用手指在屏幕上快速点击两次，可以看到内容或者图片放大，再次双击，浏览器会将网页缩放至原始比例。<br>浏览器捕获第一次单击后，会先等待一段时间，如果在这段时间区间里用户未进行下一次点击，则浏览器会做单击事件的处理。如果这段时间里用户进行了第二次单击操作，则浏览器会做双击事件处理。这段时间就是上面提到的300毫秒延迟。那么如何避免延迟呢？</p>
-        
-          <a class="article-more-a" href="/2016/09/28/webapp-event/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">web app</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tap事件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">touch事件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FastClick</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/28/webapp-event/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-array-max" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/23/array-max/">数组的最大值</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/23/array-max/" class="archive-article-date">
-  	<time datetime="2016-08-23T06:50:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？</p>
-<h2 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max"></a>Math.max</h2><p>JavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：<br>Math.max([value1[,value2, …]])<br>值得注意的是：<br>如果有任一参数不能被转换为数值，则结果为 NaN。<br>max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为 Math 实例的方法 (简单的来说，就是不使用 new )<br>如果没有参数，则结果为 -Infinity (注意是负无穷大)<br>而我们需要分析的是：</p>
-        
-          <a class="article-more-a" href="/2016/08/23/array-max/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/23/array-max/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-es7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/18/es7/">ES7 新特性</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/18/es7/" class="archive-article-date">
-  	<time datetime="2016-07-18T11:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES7主要是增加了Array.prototype.includes()和求冥运算两个特性。</p>
-<h2 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes"></a>Array.prototype.includes</h2><p>Array.prototype.includes用法都容易和简单。它是一个替代indexOf，开发人员用来检查数组中是否存在值，indexOf是一种尴尬的使用，因为它返回一个元素在数组中的位置或者-1当这样的元素不能被找到的情况下。所以它返回一个数字，而不是一个布尔值。开发人员需要实施额外的检查。在ES6，要检查是否存在值你需要做一些如下图所示小技巧，因为他们没有匹配到值，Array.prototype.indexOf返回-1变成了true（转换成true），但是当匹配的元素为0位置时候，该数组包含元素，却变成了false<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'react'</span>, <span class="string">'angular'</span>, <span class="string">'vue'</span>]</div><div class="line"></div><div class="line"><span class="comment">// WRONG</span></div><div class="line"><span class="keyword">if</span> (arr.indexOf(<span class="string">'react'</span>)) &#123; <span class="comment">// 0 -&gt; evaluates to false, definitely as we expected</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Can use React'</span>) <span class="comment">// this line would never be executed</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Correct</span></div><div class="line"><span class="keyword">if</span> (arr.indexOf(<span class="string">'react'</span>) !== <span class="number">-1</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Can use React'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2016/07/18/es7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES7</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/18/es7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-es7-async" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/12/es7-async/">ES7 async/await</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/12/es7-async/" class="archive-article-date">
-  	<time datetime="2016-06-12T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES7 提出的async 函数，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。相较于 Generator，Async 函数的改进在于下面四点：</p>
+        <p><strong>一、冒泡排序</strong><br>冒泡排序是最简单的排序算法。<br><a id="more"></a><br>假设数组一共有n个元素，元素最大下标为n-1，冒泡排序的具体做法是：第一趟在序列(A[0]~A[n-1])中从前往后进行两个相邻元素的比较，若前者大，则交换，比较 n-1 次；第一趟排序结束，最大元素被交换到A[n-1]中，下一趟排序只需要在子序列(A[0]~A[n-2])中进行；依次类推，冒泡排序最多进行 n-1 趟。基本的冒泡排序可以利用旗标的方式稍微减少一些比较的时间，当寻访完序列后都沒有发生任何的交换动作，表示排序已经完成，而无需再进行之后的比较与交换动作。<br>优点：稳定，比较次数已知；<br>缺点：慢，每次只能移动相邻两个数据，移动数据的次数多。<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    bubbleSort(arr, N);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*冒泡排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, j, flag = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n - <span class="number">1</span> &amp;&amp; flag; i++) <span class="comment">// 最多进行n-1趟，加flag可以提前结束比较过程</span></div><div class="line">    &#123;</div><div class="line">        flag = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; n - <span class="number">1</span> - i; j++) <span class="comment">//减去i,就是剩下的要比较的元素个数</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j + <span class="number">1</span>])</div><div class="line">            &#123;</div><div class="line">                swap(&amp;arr[j], &amp;arr[j + <span class="number">1</span>]);</div><div class="line">                flag = <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*两数交换*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>冒泡排序最好的情况下只需进行一趟排序，(n-1)次比较，此时的时间复杂度为O(n)，无需移动元素；最坏的情况下进行 n-1 趟排序，时间复杂度为O(n2)；冒泡排序是稳定的排序算法。<br><strong>二、选择排序</strong><br>原理：将初始序列(A[0]~A[n-1])作为待排序序列，第一趟在待排序序列(A[0]~A[n-1])中找到最小值元素，将其与第一个元素A[0]交换，这样子序列(A[0])已经有序，下一趟在排序在待排序子序列(A[1]~A[n-1])中进行。第i趟排序在待排序子序列(A[i-1]~A[n-1])中找到最小值元素，与该子序列中第一个元素A[i-1]交换。经过 n-1 趟排序后使得初始序列有序。<br>优点：比较次数与冒泡排序一样，数据移动次数比冒泡排序少；<br>缺点：相对之下还是慢。<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    selectSort(arr, N);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*选择排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, j;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) <span class="comment">//最多进行n-1趟</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> m = i; <span class="comment">//m保存值最小的元素的下标</span></div><div class="line">        <span class="keyword">for</span>(j = i + <span class="number">1</span>; j &lt; n; j++) <span class="comment">//j要取到最后一个元素,即A[n-1]</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(arr[j] &lt; arr[m])  m = j; </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(i != m)  swap(&amp;arr[i], &amp;arr[m]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*两数交换*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>选择排序的最好、最坏和平均情况的时间复杂度都为O(n2)，而且它还需交换元素(n-1)次和移动元素3(n-1)次；它是不稳定的排序算法。<br><strong>三、插入排序</strong><br>原理：将初始序列中的第一个元素作为一个有序序列，然后将剩下的 n-1 个元素按关键字大小依次插入该有序序列，每插入一个元素后依然保持该序列有序，经过 n-1 趟排序后使初始序列有序。<br>优点：稳定，快；<br>缺点：比较次数不一定，比较次数越少，插入点后的数据移动越多，特别是当数据总量庞大的时候，但用链表可以解决这个问题。<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    insertSort(arr, N);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*插入排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, j, temp, k;</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; n; i++) <span class="comment">//从第2个(下标从0开始)元素开始</span></div><div class="line">    &#123;</div><div class="line">        temp = arr[i];</div><div class="line">        j = i - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(temp &lt; arr[j])   <span class="comment">//找插入位置</span></div><div class="line">        &#123;</div><div class="line">            arr[j + <span class="number">1</span>] = arr[j]; <span class="comment">//找到后元素往后移</span></div><div class="line">            j--;</div><div class="line">            <span class="keyword">if</span>(j == <span class="number">-1</span>) <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        arr[j + <span class="number">1</span>] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其他说明：插入排序在最好的情况下时间复杂度为O(n)，比较次数为(n-1)次，移动元素次数是2(n-1)；最坏的情况下时间复杂度为O(n2)；插入排序是稳定的排序算法。<br><strong>四、快速排序</strong><br>原理：快速排序是找出一个元素（理论上可以随便找一个）作为基准,然后对数组进行分区操作,使基准左边元素的值都不大于基准值,基准右边的元素值 都不小于基准值，如此作为基准的元素调整到排序后的正确位置。递归快速排序，将其他n-1个元素也调整到排序后的正确位置。最后每个元素都是在排序后的正确位置，排序完成。所以快速排序算法的核心算法是分区操作，即如何调整基准的位置以及调整返回基准的最终位置以便分治递归。<br>优点：极快，数据移动少；<br>缺点：不稳定。<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    quickSort(arr, <span class="number">0</span>, N - <span class="number">1</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*快速排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(left &lt; right)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> key = arr[left];  <span class="comment">// 刚开始以第一个数为标志数据</span></div><div class="line">        <span class="keyword">int</span> low = left;</div><div class="line">        <span class="keyword">int</span> high = right;</div><div class="line">        <span class="keyword">while</span>(low &lt; high)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[high] &gt; key)</div><div class="line">            &#123;</div><div class="line">                high--;  <span class="comment">//从后面开始找，找到不大于key值的数为止</span></div><div class="line">            &#125;</div><div class="line">            arr[low] = arr[high];  <span class="comment">// 将该数放到key值的左边</span></div><div class="line">            <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[low] &lt; key)</div><div class="line">            &#123;</div><div class="line">                low++;  <span class="comment">// 从前面开始找，找到不小于key值的数为止</span></div><div class="line">            &#125;</div><div class="line">            arr[high] = arr[low]; <span class="comment">// 将该数放到key值的右边</span></div><div class="line">        &#125;</div><div class="line">        arr[low] = key;  <span class="comment">// 把key值填充到low位置，下次重新找key值</span></div><div class="line">        quickSort(arr, left, low - <span class="number">1</span>); <span class="comment">//将key值左边的数递归排序</span></div><div class="line">        quickSort(arr, low + <span class="number">1</span>, right); <span class="comment">//将key值右边的数递归排序</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其它说明：在最好情况下，每次划分所取的基准都是当前无序区的”中值”记录，划分的结果是基准的左、右两个无序子区间的长度大致相等。总的关键字比较次数：O(nlogn)，尽管快速排序的最坏时间为O(n2)，但就平均性能而言，它是基于关键字比较的内部排序算法中速度最快者，快速排序亦因此而得名。它的平均时间复杂度为O(nlogn)。快速排序是不稳定的排序算法。<br><strong>五、归并排序</strong><br>原理：将n个待排序的记录看作由n个长度为1（即由一个记录构成）的子文件组成。每两个相邻的有序子文件分成一组，共有n/2组，对每一组进行排序，这样就可以得到长度为2的n/2个有序子文件。重复这个过程，即可得到长度为n的一个有序文件。<br>优点：快速、稳定<br>缺点：对数据的有序性不敏感，如果改造成索引操作，效果就非常好了<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> center, <span class="keyword">int</span> right)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    mergeSort(arr, <span class="number">0</span>, N - <span class="number">1</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*归并排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (left &gt;= right) <span class="keyword">return</span>;</div><div class="line">    <span class="comment">// 找出中间索引</span></div><div class="line">    <span class="keyword">int</span> center = (left + right) / <span class="number">2</span>;</div><div class="line">    <span class="comment">// 对左边数组进行递归</span></div><div class="line">    mergeSort(arr, left, center);</div><div class="line">    <span class="comment">// 对右边数组进行递归</span></div><div class="line">    mergeSort(arr, center + <span class="number">1</span>, right);</div><div class="line">    <span class="comment">// 合并</span></div><div class="line">    merge(arr, left, center, right);</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line">* 将两个数组进行归并，归并前面2个数组已有序，归并后依然有序</div><div class="line">* @param arr 数组对象</div><div class="line">* @param left 左数组的第一个元素的索引</div><div class="line">* @param center 左数组的最后一个元素的索引，center+1是右数组第一个元素的索引</div><div class="line">* @param right 右数组最后一个元素的索引</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> center, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 临时数组</span></div><div class="line">    <span class="keyword">int</span> tmpArr[N];</div><div class="line">    <span class="comment">// 右数组第一个元素索引</span></div><div class="line">    <span class="keyword">int</span> mid = center + <span class="number">1</span>;</div><div class="line">    <span class="comment">// third 记录临时数组的索引</span></div><div class="line">    <span class="keyword">int</span> third = left;</div><div class="line">    <span class="comment">// 缓存左数组第一个元素的索引</span></div><div class="line">    <span class="keyword">int</span> tmp = left;</div><div class="line">    <span class="keyword">while</span> (left &lt;= center &amp;&amp; mid &lt;= right)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 从两个数组中取出最小的放入临时数组</span></div><div class="line">        <span class="keyword">if</span> (arr[left] &lt;= arr[mid])</div><div class="line">        &#123;</div><div class="line">            tmpArr[third++] = arr[left++];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            tmpArr[third++] = arr[mid++];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 剩余部分依次放入临时数组（实际上两个while只会执行其中一个）</span></div><div class="line">    <span class="keyword">while</span> (mid &lt;= right)</div><div class="line">    &#123;</div><div class="line">        tmpArr[third++] = arr[mid++];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span> (left &lt;= center)</div><div class="line">    &#123;</div><div class="line">        tmpArr[third++] = arr[left++];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 将临时数组中的内容拷贝回原数组中</span></div><div class="line">    <span class="comment">// （原left-right范围的内容被复制回原数组）</span></div><div class="line">    <span class="keyword">while</span> (tmp &lt;= right)</div><div class="line">    &#123;</div><div class="line">        arr[tmp] = tmpArr[tmp++];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其它说明：由于归并排序每趟归并都会使得有序子段的长度增长1倍，即是原有序子段的2倍，所以从长度为1的子段开始，需经过log2n次一趟归并才能产生长度为n的有序段。而每一趟归并至多进行n-1次比较。所以其时间复杂度为O(nlog2n)。最好情况、最坏情况、平均情况下，时间复杂度都是O(nlog2n)。归并排序是稳定的排序算法。归并排序需要和待排序文件容量相同的辅助存储空间。<br><strong>六、希尔排序</strong><br>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。希尔排序是不稳定排序算法。希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
 <ul>
-<li><strong>内置执行器</strong>。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样。</li>
-<li><strong>更好的语义</strong>。async 和 await 相较于 * 和 yield 更加语义化。</li>
-<li><strong>更广的适用性</strong>。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise对象。而 async 函数的 await 命令后面则可以是 Promise 或者 原始类型的值（Number，string，boolean，但这时等同于同步操作）</li>
-<li><strong>返回值是 Promise</strong>。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用</li>
+<li>插入排序在对几乎已经排好序的数据操作时， 效率高， 即可以达到线性排序的效率</li>
+<li>但插入排序一般来说是低效的， 因为插入排序每次只能将数据移动一位</li>
 </ul>
-        
-          <a class="article-more-a" href="/2016/06/12/es7-async/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES7</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">async/await</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>原理：已知一组无序数据a[1]、a[2]、……a[n]，需将其按升序排列。发现当n不大时，插入排序的效果很好。首先取一增量d(d &lt; n)，将a[1]、a[1+d]、a[1+2d]……列为第一组，a[2]、a[2+d]、a[2+2d]……列为第二组……，a[d]、a[2d]、a[3d]……列为最后一组依此类推，在各组内用插入排序，然后取d’ &lt; d，重复上述操作，直到d=1。<br>优点：快，数据移动少；<br>缺点：不稳定，d的取值是多少，应取多少个不同的值，都无法确切知道，只能凭经验来取。<br>C语言实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, arr[N] = &#123;<span class="number">95</span>, <span class="number">27</span>, <span class="number">90</span>, <span class="number">49</span>, <span class="number">80</span>, <span class="number">58</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">18</span>, <span class="number">50</span>&#125;;</div><div class="line">    shellSort(arr, N);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"排序后:"</span>);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*希尔排序*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i, j, gap;</div><div class="line">    <span class="keyword">int</span> temp;</div><div class="line">    <span class="keyword">for</span> (gap = n / <span class="number">2</span>; gap &gt; <span class="number">0</span>; gap /= <span class="number">2</span>) <span class="comment">// 计算gap大小</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span> (i = gap; i &lt; n; i++) <span class="comment">// 将数据进行分组</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; arr[j + gap]; j -= gap) <span class="comment">//对每组数据进行插入排序</span></div><div class="line">            &#123;</div><div class="line">                temp = arr[j];</div><div class="line">                arr[j] = arr[j + gap];</div><div class="line">                arr[j + gap] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>各种排序算法比较：<br><img src="/img/sort/sort.png" alt=""></p>
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/12/es7-async/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-gzip" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/10/gzip/">网页启用gzip压缩</a>
-    </h1>
-  
-
-        
-        <a href="/2016/05/10/gzip/" class="archive-article-date">
-  	<time datetime="2016-05-10T05:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> Gzip是一种流行的文件压缩算法，现在的应用十分广泛，尤其是在Linux平台。当应用Gzip压缩到一个纯文本文件时，效果是非常明显的，大约可以减少70％以上的文件大小。这取决于文件中的内容。<br> 利用Apache中的Gzip模块，我们可以使用Gzip压缩算法来对Apache服务器发布的网页内容进行压缩后再传输到客户端浏览器。这样经过压缩后实际上降低了网络传输的字节数，最明显的好处就是可以加快网页加载的速度。<br> 网页加载速度加快的好处不言而喻，除了节省流量，改善用户的浏览体验外，另一个潜在的好处是Gzip与搜索引擎的抓取工具有着更好的关系。例如 Google就可以通过直接读取gzip文件来比普通手工抓取更快地检索网页。在Google网站管理员工具（Google Webmaster Tools）中你可以看到，sitemap.xml.gz 是直接作为Sitemap被提交的。<br>   而这些好处并不仅仅限于静态内容，PHP动态页面和其他动态生成的内容均可以通过使用Apache压缩模块压缩，加上其他的性能调整机制和相应的服务器端 缓存规则，这可以大大提高网站的性能。因此，对于部署在Linux服务器上的PHP程序，在服务器支持的情况下，我们建议你开启使用Gzip Web压缩。<br>
-        
-          <a class="article-more-a" href="/2016/05/10/gzip/#more">more >></a>
-        
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -615,7 +235,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gzip</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -624,77 +244,83 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/10/gzip/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://lenshen.com/2017/06/01/sort/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-react-intro" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/react-intro/">React原理解析</a>
-    </h1>
+    <a href="/2017/06/12/cet-search/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          英语四六级成绩查询系统
+        
+      </div>
+    </a>
   
-
-        
-        <a href="/2016/04/19/react-intro/" class="archive-article-date">
-  	<time datetime="2016-04-19T13:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>在组件的整个生命周期中，随着该组件的props或者state发生改变，其DOM表现也会有相应的变化。一个组件就是一个状态机，对于特定地输入，它总返回一致的输出。<br>一个React组件的生命周期分为三个部分：实例化、存在期和销毁时。<br>（1）实例化<br>当组件在客户端被实例化，第一次被创建时，以下方法依次被调用：getDefaultProps、getInitialState、componentWillMount、render、componentDidMount。<br>当组件在服务端被实例化，首次被创建时，以下方法依次被调用：getDefaultProps、getInitialState、componentWillMount、render。componentDidMount 不会在服务端被渲染的过程中调用。<br>（2）存在期<br>此时组件已经渲染好并且用户可以与它进行交互，比如鼠标点击，手指点按，或者其它的一些事件，导致应用状态的改变，你将会看到下面的方法依次被调用：componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render、componentDidUpdate。<br>
-        
-          <a class="article-more-a" href="/2016/04/19/react-intro/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/19/react-intro/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+  
+    <a href="/2017/05/10/socket.io/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">socket.io原理和使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -702,9 +328,10 @@
 
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -727,8 +354,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -797,6 +424,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -810,10 +441,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,15 +508,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -905,7 +528,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,7 +568,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,35 +608,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,19 +620,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,7 +640,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

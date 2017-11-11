@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？ Math.maxJavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：Math.max([value1[,value2, …]])值得注意的是：如果有任一参数不能被转换为数值，则结果为 NaN。max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为">
+  <meta name="description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？">
 <meta name="keywords" content="ES5,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组的最大值">
 <meta property="og:url" content="https://lenshen.com/2016/08/23/array-max/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？ Math.maxJavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：Math.max([value1[,value2, …]])值得注意的是：如果有任一参数不能被转换为数值，则结果为 NaN。max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为">
-<meta property="og:updated_time" content="2017-08-06T05:05:56.958Z">
+<meta property="og:description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？">
+<meta property="og:updated_time" content="2017-11-11T08:06:48.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组的最大值">
-<meta name="twitter:description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？ Math.maxJavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：Math.max([value1[,value2, …]])值得注意的是：如果有任一参数不能被转换为数值，则结果为 NaN。max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为">
+<meta name="twitter:description" content="前言取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,10 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？</p>
-<h2 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max"></a>Math.max</h2><p>JavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：<br>Math.max([value1[,value2, …]])<br>值得注意的是：<br>如果有任一参数不能被转换为数值，则结果为 NaN。<br>max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为 Math 实例的方法 (简单的来说，就是不使用 new )<br>如果没有参数，则结果为 -Infinity (注意是负无穷大)<br>而我们需要分析的是：</p>
-<a id="more"></a>
-<p>1.如果任一参数不能被转换为数值，这就意味着如果参数可以被转换成数字，就是可以进行比较的，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.max(<span class="literal">true</span>, <span class="number">0</span>) <span class="comment">// 1</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="literal">true</span>, <span class="string">'2'</span>, <span class="literal">null</span>) <span class="comment">// 2</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, <span class="literal">undefined</span>) <span class="comment">// NaN</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, &#123;&#125;) <span class="comment">// NaN</span></div></pre></td></tr></table></figure></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>取出数组中的最大值或者最小值是开发中常见的需求，但你能想出几种方法来实现这个需求呢？<br><a id="more"></a></p>
+<h2 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max"></a>Math.max</h2><p>JavaScript 提供了 Math.max 函数返回一组数中的最大值，用法是：<br>Math.max([value1[,value2, …]])<br>值得注意的是：<br>如果有任一参数不能被转换为数值，则结果为 NaN。<br>max 是 Math 的静态方法，所以应该像这样使用：Math.max()，而不是作为 Math 实例的方法 (简单的来说，就是不使用 new )<br>如果没有参数，则结果为 -Infinity (注意是负无穷大)<br>而我们需要分析的是：<br>1.如果任一参数不能被转换为数值，这就意味着如果参数可以被转换成数字，就是可以进行比较的，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.max(<span class="literal">true</span>, <span class="number">0</span>) <span class="comment">// 1</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="literal">true</span>, <span class="string">'2'</span>, <span class="literal">null</span>) <span class="comment">// 2</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, <span class="literal">undefined</span>) <span class="comment">// NaN</span></div><div class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, &#123;&#125;) <span class="comment">// NaN</span></div></pre></td></tr></table></figure></p>
 <p>2.如果没有参数，则结果为 -Infinity，对应的，Math.min 函数，如果没有参数，则结果为 Infinity，所以：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min();</div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max();</div><div class="line"><span class="built_in">console</span>.log(min &gt; max);</div></pre></td></tr></table></figure></p>
 <p>了解了 Math.max 方法，我们以求数组最大值的为例，思考有哪些方法可以实现这个需求。</p>
 <h2 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h2><p>最最原始的方法，莫过于循环遍历一遍：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">6</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">11</span>, <span class="number">23</span>];</div><div class="line"><span class="keyword">var</span> result = arr[<span class="number">0</span>];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</div><div class="line">    result =  <span class="built_in">Math</span>.max(result, arr[i]);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure></p>
@@ -426,6 +424,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -439,10 +441,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,15 +508,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +528,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,7 +568,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,35 +608,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,19 +620,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,7 +640,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

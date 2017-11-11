@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTTP先看Nodejs 的经典 httpServer 代码1234567var http = require(&apos;http&apos;);var server = http.createServer(requestHandler);function requestHandler(req, res) &amp;#123;  res.end(&apos;hello visitor!&apos;);&amp;#125;server.listen(3">
+  <meta name="description" content="HTTP先看Nodejs 的经典 httpServer 代码">
 <meta name="keywords" content="nodejs,Express,Connect,中间件,异步流程控制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Connect中间件">
 <meta property="og:url" content="https://lenshen.com/2017/04/06/connect/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HTTP先看Nodejs 的经典 httpServer 代码1234567var http = require(&apos;http&apos;);var server = http.createServer(requestHandler);function requestHandler(req, res) &amp;#123;  res.end(&apos;hello visitor!&apos;);&amp;#125;server.listen(3">
-<meta property="og:updated_time" content="2017-08-06T06:58:33.285Z">
+<meta property="og:description" content="HTTP先看Nodejs 的经典 httpServer 代码">
+<meta property="og:updated_time" content="2017-11-11T08:01:22.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Connect中间件">
-<meta name="twitter:description" content="HTTP先看Nodejs 的经典 httpServer 代码1234567var http = require(&apos;http&apos;);var server = http.createServer(requestHandler);function requestHandler(req, res) &amp;#123;  res.end(&apos;hello visitor!&apos;);&amp;#125;server.listen(3">
+<meta name="twitter:description" content="HTTP先看Nodejs 的经典 httpServer 代码">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>先看Nodejs 的经典 httpServer 代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(requestHandler);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestHandler</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello visitor!'</span>);</div><div class="line">&#125;</div><div class="line">server.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>里面的函数 requestHandler 就是所有http请求的响应函数，即所有的请求都经过这个函数的处理，是所有请求的入口函数。通过 requestHandler 函数我们能写一些简单的 http 逻辑，比如上面的例子，所有请求都返回 hello visitor!。然而，我们的业务逻辑不可能这么简单。例如：需要实现一个接口，要做的是当请求过来时，先判断来源的请求是否包含请求体，然后判断请求体中的id是不是在数据库中存在，最后若存在则返回true，不存在则返回false。<br><a id="more"></a></p>
+        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>先看Nodejs 的经典 httpServer 代码<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(requestHandler);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestHandler</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello visitor!'</span>);</div><div class="line">&#125;</div><div class="line">server.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
+<p>里面的函数 requestHandler 就是所有http请求的响应函数，即所有的请求都经过这个函数的处理，是所有请求的入口函数。通过 requestHandler 函数我们能写一些简单的 http 逻辑，比如上面的例子，所有请求都返回 hello visitor!。然而，我们的业务逻辑不可能这么简单。例如：需要实现一个接口，要做的是当请求过来时，先判断来源的请求是否包含请求体，然后判断请求体中的id是不是在数据库中存在，最后若存在则返回true，不存在则返回false。</p>
 <ul>
 <li><p>检测请求中请求体是否存在，若存在则解析请求体；</p>
 </li>
@@ -485,6 +485,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -498,10 +502,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,15 +569,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,7 +589,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,7 +629,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,35 +669,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,19 +681,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +701,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

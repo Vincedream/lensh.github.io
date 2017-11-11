@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。示例1：1234567process.nextTick(function()&amp;#123;    console.log(&quot;nextTick延迟&quot;);&amp;#125;);setImmediate(fun">
+  <meta name="description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。">
 <meta name="keywords" content="nodejs,定时器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs定时器">
 <meta property="og:url" content="https://lenshen.com/2017/02/19/nodejs-timer/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。示例1：1234567process.nextTick(function()&amp;#123;    console.log(&quot;nextTick延迟&quot;);&amp;#125;);setImmediate(fun">
-<meta property="og:updated_time" content="2017-08-06T02:37:44.013Z">
+<meta property="og:description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。">
+<meta property="og:updated_time" content="2017-11-11T08:02:48.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs定时器">
-<meta name="twitter:description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。示例1：1234567process.nextTick(function()&amp;#123;    console.log(&quot;nextTick延迟&quot;);&amp;#125;);setImmediate(fun">
+<meta name="twitter:description" content="node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,10 +187,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。<br>示例1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟"</span>);</div><div class="line">&#125;);</div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟"</span>);</div><div class="line"> &#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</div></pre></td></tr></table></figure></p>
+        <p>node中使用定时器的问题在于,它并非精确的.譬如setTimeout()设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms,再次轮到定时器时,已经耽误了4ms.因此用到了下面的定时器。<br><a id="more"></a><br>示例1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟"</span>);</div><div class="line">&#125;);</div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟"</span>);</div><div class="line"> &#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</div></pre></td></tr></table></figure></p>
 <p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//正常执行</div><div class="line">//nextTick延迟</div><div class="line">//setImmediate延迟</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>原理解析：nextTick()的回调函数执行的优先级要高于setImmediate();process.nextTick()属于idle观<br>察者,setImmediate()属check观察者.在每一轮循环检查中,idle观察者先于I/O观察者,I/O观察者先于<br>check观察者.在具体实现上,process.nextTick()的回调函数保存在一个数组中,setImmediate()的结果<br>则是保存在链表中.在行为上,process.nextTick()在每轮循环中会将数组中的回调函数全部执行完.而<br>setImmediate()在每轮循环中执行链表中的一个回调函数.</p>
+<p>原理解析：process.nextTick()的回调函数执行的优先级要高于setImmediate()。<br>process.nextTick()属于idle观察者,setImmediate()属check观察者,在每一轮循环检查中,idle观察者先于I/O观察者,I/O观察者先于check观察者。<br>process.nextTick()的回调函数保存在一个数组中，会将异步回调放到当前帧的末尾、io回调之前，如果nextTick过多，会导致io回调不断延后,最后callback堆积太多。setImmediate()的结果则是保存在链表中，会将异步回调放到下一帧,不影响io回调,不会造成callback 堆积。<br>process.nextTick()在每轮循环中会将数组中的回调函数全部执行完，而setImmediate()在每轮循环中执行链表中的一个回调函数。<br>process.nextTick()，效率最高，消费资源小，但会阻塞CPU的后续调用；<br>setTimeout()，精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大；<br>setImmediate()，消耗的资源小，也不会造成阻塞，但效率也是最低的。</p>
 <p>示例2：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加入2个nextTick()的回调函数</span></div><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟执行1"</span>);</div><div class="line">&#125;);</div><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"nextTick延迟执行2"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//加入两个setImmediate()回调函数</span></div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟执行1"</span>);</div><div class="line">    process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"强势插入"</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"setImmediate延迟执行2"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">// 正常执行</span></div><div class="line"><span class="comment">// nextTick延迟执行1</span></div><div class="line"><span class="comment">// nextTick延迟执行2</span></div><div class="line"><span class="comment">// setImmediate延迟执行1</span></div><div class="line"><span class="comment">// setImmediate延迟执行2</span></div><div class="line"><span class="comment">// 强势插入</span></div></pre></td></tr></table></figure></p>
 
       
@@ -310,8 +309,8 @@
     </a>
   
   
-    <a href="/2017/01/08/web-im/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">网页实时聊天的实现</div>
+    <a href="/2017/01/29/coding1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">校招编程题常见题型汇总2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -419,6 +418,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -432,10 +435,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +502,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +522,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +562,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,35 +602,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,19 +614,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +634,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://lenshen.com">
   <title>lensh的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。 更新一览通过官方的Release note我们可以看到npm5的主要新功能和大改动主要有下面几点(后面将会详细介绍）：默认新增 package-lock.json 来记录依">
+  <meta name="description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。">
 <meta name="keywords" content="npm5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm5 新版功能特性解析及与 yarn 评测对比">
 <meta property="og:url" content="https://lenshen.com/2017/06/18/npm5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。 更新一览通过官方的Release note我们可以看到npm5的主要新功能和大改动主要有下面几点(后面将会详细介绍）：默认新增 package-lock.json 来记录依">
-<meta property="og:updated_time" content="2017-08-28T02:53:11.945Z">
+<meta property="og:description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。">
+<meta property="og:updated_time" content="2017-11-11T07:58:12.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm5 新版功能特性解析及与 yarn 评测对比">
-<meta name="twitter:description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。 更新一览通过官方的Release note我们可以看到npm5的主要新功能和大改动主要有下面几点(后面将会详细介绍）：默认新增 package-lock.json 来记录依">
+<meta name="twitter:description" content="前言前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,8 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。</p>
-<h2 id="更新一览"><a href="#更新一览" class="headerlink" title="更新一览"></a>更新一览</h2><p>通过官方的Release note我们可以看到npm5的主要新功能和大改动主要有下面几点(后面将会详细介绍）：<br>默认新增 package-lock.json 来记录依赖树信息，进行依赖锁定，并使用新的 shrinkwrap 格式。–save 变成了默认参数，执行 install 依赖包时默认都会带上，除非加上 –no-save。Git 依赖优化：支持指定 semver 版本安装；含有 prepare 脚本时将安装其 devDependencies 并执行脚本。使用本地目录文件作为 file 类型依赖安装时，使用创建 symlink 的方式替代原来的文件拷贝方式，提升速度。脚本更改：在 npm pack, npm publish 时新增 prepack 和 postpack 脚本；preinstall 脚本运行优先级提升到最前，并且可以修改 node_modules。包发布将同时生成 sha512 和 sha1 校验码，下载依赖时将使用强校验算法。重写整个缓存系统和 npm cache 系列命令。废除 –cache-min –cache-max 等命令，缓存系统将由 npm 自身维护，无需用户介入。registry 策略调整：配置优先级高于锁文件中记录的优先级；除非使用不同 scope 的包，不再支持不同的包使用不同的 registry。<br><a id="more"></a><br>除此之外还包含一些细节优化：<br>离线安装时将不再尝试连接网络，而是降级尝试从缓存中读取，或直接失败。锁文件（package-lock.json, npm-shrinkwrap.json）将包含 optionalDependencies。本地包（local tarball）具有 .tar, .tar.gz, 或 .tgz 后缀时才会被安装。新增notice 为默认 loglevel。node-gyp 在 Windows 提供对 node-gyp.cmd 的支持。移除./cli.js，使用 ./bin/npm-cli.js 代替。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间 npm 发布了 5.0 版本，提供了自动记录依赖树，下载使用强校验，重写缓存系统等功能升级和改造，吸引了不少关注。本文将对 npm5 的新功能和变化点在进行实践使用后进行介绍和总结，并和 yarn 进行简单对比。<br><a id="more"></a></p>
+<h2 id="更新一览"><a href="#更新一览" class="headerlink" title="更新一览"></a>更新一览</h2><p>通过官方的Release note我们可以看到npm5的主要新功能和大改动主要有下面几点(后面将会详细介绍）：<br>默认新增 package-lock.json 来记录依赖树信息，进行依赖锁定，并使用新的 shrinkwrap 格式。–save 变成了默认参数，执行 install 依赖包时默认都会带上，除非加上 –no-save。Git 依赖优化：支持指定 semver 版本安装；含有 prepare 脚本时将安装其 devDependencies 并执行脚本。使用本地目录文件作为 file 类型依赖安装时，使用创建 symlink 的方式替代原来的文件拷贝方式，提升速度。脚本更改：在 npm pack, npm publish 时新增 prepack 和 postpack 脚本；preinstall 脚本运行优先级提升到最前，并且可以修改 node_modules。包发布将同时生成 sha512 和 sha1 校验码，下载依赖时将使用强校验算法。重写整个缓存系统和 npm cache 系列命令。废除 –cache-min –cache-max 等命令，缓存系统将由 npm 自身维护，无需用户介入。registry 策略调整：配置优先级高于锁文件中记录的优先级；除非使用不同 scope 的包，不再支持不同的包使用不同的 registry。<br>除此之外还包含一些细节优化：<br>离线安装时将不再尝试连接网络，而是降级尝试从缓存中读取，或直接失败。锁文件（package-lock.json, npm-shrinkwrap.json）将包含 optionalDependencies。本地包（local tarball）具有 .tar, .tar.gz, 或 .tgz 后缀时才会被安装。新增notice 为默认 loglevel。node-gyp 在 Windows 提供对 node-gyp.cmd 的支持。移除./cli.js，使用 ./bin/npm-cli.js 代替。</p>
 <p>下面就来对主要的修改点做详细介绍和对比：</p>
 <h2 id="特性一：锁文件（lockfile）"><a href="#特性一：锁文件（lockfile）" class="headerlink" title="特性一：锁文件（lockfile）"></a>特性一：锁文件（lockfile）</h2><p>package-lock.json<br>本次npm5 新增了 package-lock.json 文件，在操作依赖时默认生成，用于记录和锁定依赖树的信息。<br>使用过 yarn 的同学应该能感觉到，这次 npm5 的很多改动都有参考 yarn，这里估计也是在 yarn 的 lockfile 大受欢迎的背景下做出了这个修改（其实之前的 npm 版本并不是没有 lockfile，后面会提<br>到）。在首次执行 npm install 后，会默认创建 package-lock.json 文件。</p>
 
@@ -414,6 +414,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">304</a>
               </li>
              
@@ -427,10 +431,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,15 +498,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gzip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,7 +518,35 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES8</a>
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPV6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +558,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,35 +598,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事件监听</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">发布/订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Generator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,19 +610,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web app</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
+                <a href="javascript:void(0)" class="js-tag color1">语义化版本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,7 +630,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">定时器</a>
+                <a href="javascript:void(0)" class="js-tag color3">web app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tap事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">touch事件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">FastClick</a>
               </li>
             
             <div class="clearfix"></div>
